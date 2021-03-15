@@ -49,6 +49,7 @@ class _FreelancerViewState extends State<FreelancerView> {
         children: _pages,
         controller: _pageController,
         onPageChanged: _onPageChanged,
+        physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: CupertinoTabBar(
         onTap: _changePage,
