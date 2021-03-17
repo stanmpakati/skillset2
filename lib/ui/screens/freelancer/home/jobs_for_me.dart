@@ -23,31 +23,30 @@ class _JobsForMeState extends State<JobsForMe> {
 
   @override
   Widget build(BuildContext context) {
+    User user = Provider.of<User>(context, listen: true);
     return Center(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 14.0),
-        child: Consumer<User>(builder: (context, user, child) {
-          return Column(
-            children: [
-              ChipsInputField(
-                labelText: 'Something',
-                getChips: getChips,
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(0, 22, 200, 0),
-                child: EducationWidget(
-                  education: Education(
-                    certificate: "O'level",
-                    school: 'St Johns Emerald Hill High School',
-                    result: '16 As',
-                    yearGraduated: 1999,
-                  ),
+        child: Column(
+          children: [
+            ChipsInputField(
+              labelText: 'Something',
+              getChips: getChips,
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 22, 200, 0),
+              child: EducationWidget(
+                education: Education(
+                  certificate: "O'level",
+                  school: 'St Johns Emerald Hill High School',
+                  result: '16 As',
+                  yearGraduated: 1999,
                 ),
               ),
-              FreelancerWidget(user: user)
-            ],
-          );
-        }),
+            ),
+            FreelancerWidget(user: user)
+          ],
+        ),
       ),
     );
   }

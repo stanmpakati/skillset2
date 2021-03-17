@@ -11,15 +11,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  at_client_mobile: ^1.0.0+8
+  at_server_status: ^0.1.0+1
+  at_demo_data: ^0.0.3+1
   cached_network_image: ^2.5.1
   cupertino_icons: ^1.0.2
-  flutter_chips_input: ^1.9.5
   flutter_rating_bar: ^4.0.0
   image_cropper: ^1.4.0
   image_picker: ^0.7.2+1
   path_provider: ^2.0.1
   provider: ^5.0.0
-  uuid: ^3.0.1
+  uuid: ^2.2.2
 
 dev_dependencies:
   flutter_test:

@@ -9,7 +9,7 @@ import 'package:skillset/core/models/work_history.dart';
 
 class User {
   final String userId;
-  // final String atsign;
+  final String atSign;
   final String profilePicture;
   final String firstName;
   final String lastName;
@@ -24,6 +24,7 @@ class User {
 
   User({
     @required this.userId,
+    @required this.atSign,
     this.profilePicture,
     @required this.firstName,
     @required this.lastName,
