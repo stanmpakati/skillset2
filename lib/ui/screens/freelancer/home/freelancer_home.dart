@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:skillset/ui/screens/freelancer/home/widgets/tab_bar.dart';
 
 class FreelancerHome extends StatefulWidget {
+  static final String id = "FreelancerHome";
   @override
   _FreelancerHomeState createState() => _FreelancerHomeState();
 }
