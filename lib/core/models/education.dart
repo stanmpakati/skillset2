@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Education {
   final String certificate;
   final String result;
@@ -6,10 +8,10 @@ class Education {
   final bool graduated;
 
   Education({
-    this.certificate,
+    @required this.certificate,
     this.result,
-    this.school,
-    this.yearGraduated,
+    @required this.school,
+    @required this.yearGraduated,
     this.graduated,
   });
 }

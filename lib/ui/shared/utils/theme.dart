@@ -6,9 +6,9 @@ TextTheme textTheme = TextTheme(
   headline3: TextStyle(fontFamily: 'BebasNeue', fontSize: 24.0),
   headline4: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w900),
   headline5: TextStyle(
-      fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.blue),
-  headline6: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),
-  bodyText1: TextStyle(fontWeight: FontWeight.w600),
+      fontSize: 18.0, fontWeight: FontWeight.w700, color: Colors.blue),
+  headline6: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700),
+  bodyText1: TextStyle(fontWeight: FontWeight.w700),
   caption: TextStyle(color: Colors.black54),
   subtitle1: TextStyle(
     fontFamily: 'BebasNeue',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skillset/ui/screens/freelancer/home/jobs_for_me.dart';
 import 'package:skillset/ui/screens/freelancer/home/widgets/tab_bar.dart';
 
 class FreelancerHome extends StatefulWidget {
@@ -21,7 +22,7 @@ class _FreelancerHomeState extends State<FreelancerHome> {
             Expanded(
               child: TabBarView(
                 children: [
-                  Icon(Icons.umbrella),
+                  JobsForMe(),
                   Icon(Icons.handyman),
                 ],
               ),

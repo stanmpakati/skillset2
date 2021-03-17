@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:skillset/core/models/education.dart';
 import 'package:skillset/core/models/job.dart';
 import 'package:skillset/core/models/portifolio.dart';
@@ -22,16 +23,16 @@ class User {
   final List<JobProposal> proposalsRecieved;
 
   User({
-    this.userId,
+    @required this.userId,
     this.profilePicture,
-    this.firstName,
-    this.lastName,
+    @required this.firstName,
+    @required this.lastName,
     this.city,
     this.country,
     this.bio,
     this.jobsCompleted,
     this.reviews,
-    this.stars,
+    @required this.stars,
     this.jobsProduced,
     this.proposalsRecieved,
   });
