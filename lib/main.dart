@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:skillset/core/models/user.dart';
 import 'package:skillset/core/services/auth_service.dart';
 import 'package:skillset/ui/screens/freelancer/freelancer_view.dart';
+import 'package:skillset/ui/screens/freelancer/home/freelancer_home.dart';
 import 'package:skillset/ui/screens/home_temp.dart';
 import 'package:skillset/ui/shared/utils/theme.dart';
+import 'ui/screens/login/login.dart';
+import 'ui/screens/welcome.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,13 +42,30 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: lightTheme,
-        home: AuthenticationWrapper(),
+        initialRoute: AuthenticationWrapper.id,
+        routes: {
+          LoginAtSign.id: (context) => LoginAtSign(),
+          WelcomeScreen.id: (context) => WelcomeScreen(),
+          FreelancerHome.id: (context) => FreelancerHome(),
+          AuthenticationWrapper.id: (context) => AuthenticationWrapper(),
+        },
       ),
     );
   }
 }
 
+String authWrapper(BuildContext context) {
+  final User user = context.watch<User>();
+  if (user.atSign == null) {
+    print(user.atSign);
+    return LoginAtSign.id;
+  }
+  print('not null ${user.atSign}');
+  return FreelancerHome.id;
+}
+
 class AuthenticationWrapper extends StatelessWidget {
+  static final String id = "AuthWrapper";
   const AuthenticationWrapper({Key key}) : super(key: key);
 
   @override
@@ -52,9 +73,9 @@ class AuthenticationWrapper extends StatelessWidget {
     final User user = context.watch<User>();
     if (user.atSign == null) {
       print(user.atSign);
-      return HomeTemp();
+      return LoginAtSign();
     }
     print('not null ${user.atSign}');
-    return FreelancerView();
+    return FreelancerHome();
   }
 }
