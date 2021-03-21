@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:skillset/ui/screens/freelancer/home/freelancer_home.dart';
+import 'package:skillset/ui/screens/freelancer/profile/details.dart';
 import 'package:skillset/ui/shared/widgets/rounded_button.dart';
 
 
@@ -87,7 +87,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         setState(() {
           showSpinner = true;
         });
-      Navigator.pushReplacementNamed(context, FreelancerHome.id);
+      Navigator.pushReplacementNamed(context, PersonalDetails.id);
     }
 }
 
