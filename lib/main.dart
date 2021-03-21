@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:skillset/core/models/user.dart';
 import 'package:skillset/core/services/auth_service.dart';
-import 'package:skillset/ui/screens/freelancer/freelancer_view.dart';
 import 'package:skillset/ui/screens/freelancer/home/freelancer_home.dart';
-import 'package:skillset/ui/screens/home_temp.dart';
+import 'package:skillset/ui/screens/freelancer/profile/description.dart';
+import 'package:skillset/ui/screens/freelancer/profile/details.dart';
+import 'package:skillset/ui/screens/freelancer/profile/skills.dart';
 import 'package:skillset/ui/shared/utils/theme.dart';
 import 'ui/screens/login/login.dart';
 import 'ui/screens/welcome.dart';
@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         ),
         StreamProvider<User>(
           create: (_) => user,
+          // ignore: missing_required_param
           initialData: User(),
         )
       ],
@@ -46,6 +47,9 @@ class MyApp extends StatelessWidget {
         routes: {
           LoginAtSign.id: (context) => LoginAtSign(),
           WelcomeScreen.id: (context) => WelcomeScreen(),
+          PersonalDetails.id: (context) => PersonalDetails(),
+          FreelancerDescription.id: (context) => FreelancerDescription(),
+          FreelancerSkills.id: (context) => FreelancerSkills(),
           FreelancerHome.id: (context) => FreelancerHome(),
           AuthenticationWrapper.id: (context) => AuthenticationWrapper(),
         },
