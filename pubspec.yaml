@@ -9,9 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  at_chat_flutter: ^0.0.3
   at_client_mobile: ^1.0.0+4
-  at_server_status: ^0.1.0+1
   at_demo_data: ^0.0.3+1
+  at_server_status: ^0.1.0+1
   cached_network_image: ^2.5.1
   cupertino_icons: ^1.0.2
   flutter_rating_bar: ^4.0.0

@@ -7,6 +7,8 @@ import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
 import 'package:newserverdemo/ui/screens/freelancer/proposals/proposal_notifications.dart';
 
 class FreelancerView extends StatefulWidget {
+  static final String id = "FreelancerView";
+
   @override
   _FreelancerViewState createState() => _FreelancerViewState();
 }

@@ -83,6 +83,7 @@ class FreelanceBig extends StatelessWidget {
             '${freelancer.bio}',
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontFamily: 'BebasNeue'),
           ),
           Wrap(
             alignment: WrapAlignment.start,

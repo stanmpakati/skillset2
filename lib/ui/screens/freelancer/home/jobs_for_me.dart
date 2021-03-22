@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/posting.dart';
 import 'package:newserverdemo/ui/shared/widgets/freelancer_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/job_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/short_profile_widget.dart';
-import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/education.dart';
 import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
@@ -27,13 +27,17 @@ class _JobsForMeState extends State<JobsForMe> {
 
   @override
   Widget build(BuildContext context) {
-    Freelancer freelancer = Provider.of<User>(context, listen: false);
+    Freelancer freelancer = Provider.of<Freelancer>(context, listen: false);
     String atSign = Provider.of<AuthService>(context, listen: false).atsign;
     return Center(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 14.0),
         child: ListView(
           children: [
+            Text(
+              'data',
+              style: Theme.of(context).textTheme.headline5,
+            ),
             ChipsInputField(
               labelText: 'Something',
               getChips: getChips,

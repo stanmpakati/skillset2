@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
+import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
 import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/home/freelancer_home.dart';
 import 'package:newserverdemo/ui/shared/utils/theme.dart';
+import 'core/models/posting.dart';
 import 'ui/screens/login/login.dart';
 import 'ui/screens/welcome.dart';
 
@@ -12,7 +14,7 @@ void main() {
   runApp(MyApp());
 }
 
-Stream<User> get user async* {
+Stream<Freelancer> get user async* {
   yield mockFreelancer;
 }
 
@@ -24,20 +26,22 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<AuthService>(
           create: (_) => AuthService(),
         ),
-        StreamProvider<User>(
+        StreamProvider<Freelancer>(
           create: (_) => user,
-          initialData: mockUser,
+          initialData: mockFreelancer,
         )
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: lightTheme,
-        initialRoute: AuthenticationWrapper.id,
+        initialRoute: FreelancerView.id,
         routes: {
           LoginAtSign.id: (context) => LoginAtSign(),
           WelcomeScreen.id: (context) => WelcomeScreen(),
           FreelancerHome.id: (context) => FreelancerHome(),
           AuthenticationWrapper.id: (context) => AuthenticationWrapper(),
+          FreelancerView.id: (context) => FreelancerView(),
+          JobDetails.id: (context) => JobDetails(posting: mockPosting),
         },
       ),
     );
@@ -57,7 +61,7 @@ class AuthenticationWrapper extends StatelessWidget {
         if (authService.atsign == null) {
           print('user: ${user.atSign}');
           // return LoginAtSign();
-          return FreelancerView();
+          Navigator.pushNamed(context, FreelancerView.id);
         }
 
         print('not null ${user.atSign}');
