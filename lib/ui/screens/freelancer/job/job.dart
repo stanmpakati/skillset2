@@ -34,7 +34,7 @@ class _JobDetailsState extends State<JobDetails> {
             children: [
               Expanded(
                   child: Text(
-                'Posted ${widget.posting}',
+                'Posted ${widget.posting.postedOn.toUtc()}',
                 style: Theme.of(context).textTheme.caption,
               )),
               Icon(Icons.location_on, color: Theme.of(context).accentColor),
@@ -50,6 +50,7 @@ class _JobDetailsState extends State<JobDetails> {
           SizedBox(height: 14),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
