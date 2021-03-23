@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-Widget starsRating({double rating}) {
+Widget starsRating({@required double rating, bool bigSize = false}) {
   if (rating == null) {
     return SizedBox.shrink();
   }
@@ -9,9 +9,9 @@ Widget starsRating({double rating}) {
     rating: rating,
     itemBuilder: (context, index) => Icon(
       Icons.star,
-      color: Colors.amber,
+      color: Colors.amberAccent,
     ),
     itemCount: 5,
-    itemSize: 18.0,
+    itemSize: bigSize ? 26.0 : 18.0,
   );
 }

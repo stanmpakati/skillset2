@@ -34,7 +34,7 @@ Posting mockPosting = Posting(
   have an added advantage (not lover in eating chicken duh) ''',
   skills: ['Carpentry', 'Art', 'Woodwork'],
   location: 'Muzarabani, Zimbabwe',
-  pay: Price(amount: 3500, unit: PriceUnit.job),
+  pay: Price(amount: 3500, unit: 'Job'),
   postedBy: 'boris',
   postedOn: DateTime.now(),
 );

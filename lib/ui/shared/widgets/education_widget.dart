@@ -8,7 +8,7 @@ class EducationWidget extends StatelessWidget {
   const EducationWidget({Key key, this.education}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GridTile(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,

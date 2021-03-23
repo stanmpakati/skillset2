@@ -3,6 +3,7 @@ import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
 import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/user.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: lightTheme,
-        initialRoute: FreelancerView.id,
+        initialRoute: AuthenticationWrapper.id,
         routes: {
           LoginAtSign.id: (context) => LoginAtSign(),
           WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
           PersonalDetails.id: (context) => PersonalDetails(),
           FreelancerDescription.id: (context) => FreelancerDescription(),
           FreelancerSkills.id: (context) => FreelancerSkills(),
+          Profile.id: (context) => Profile(freelancer: mockFreelancer),
         },
       ),
     );
@@ -60,18 +62,21 @@ class AuthenticationWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final User user = context.watch<User>();
-    // final String _atSign = Provider.of<AuthService>(context).atsign;
+    final Freelancer user = context.watch<Freelancer>();
+    final String _atSign =
+        Provider.of<AuthService>(context, listen: false).atsign;
     return Consumer<AuthService>(
       builder: (BuildContext contex, AuthService authService, Widget child) {
+        // Map map = user.toMap()
         if (authService.atsign == null) {
-          print('user: ${user.atSign}');
-          // return LoginAtSign();
-          Navigator.pushNamed(context, FreelancerView.id);
+          print('user: ${user.toMap()}');
+          return LoginAtSign();
+          // Navigator.pushNamed(context, FreelancerView.id);
         }
 
-        print('not null ${user.atSign}');
-        return FreelancerView();
+        print('not null ${user.toMap()}');
+        print(_atSign);
+        return WelcomeScreen();
       },
     );
   }

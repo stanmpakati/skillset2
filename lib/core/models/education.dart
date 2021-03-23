@@ -14,4 +14,14 @@ class Education {
     @required this.yearGraduated,
     this.graduated,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'certificate': certificate,
+      'result': result,
+      'school': school,
+      'yearGraduated': yearGraduated,
+      'graduated': graduated,
+    };
+  }
 }

@@ -73,8 +73,9 @@ class _ChipsInputFieldState extends State<ChipsInputField> {
               child: TextFormField(
                 controller: _chipsController,
                 decoration: InputDecoration(
-                  labelText: widget.labelText,
-                ),
+                    labelText: widget.labelText,
+                    labelStyle: TextStyle(fontFamily: 'Raleway', fontSize: 22),
+                    fillColor: Colors.black),
                 onEditingComplete: _updateChips,
               ),
             ),

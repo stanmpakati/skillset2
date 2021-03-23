@@ -34,26 +34,11 @@ class _JobsForMeState extends State<JobsForMe> {
         padding: EdgeInsets.symmetric(horizontal: 14.0),
         child: ListView(
           children: [
-            Text(
-              'data',
-              style: Theme.of(context).primaryTextTheme.headline5,
-            ),
             ChipsInputField(
               labelText: 'Something',
               getChips: getChips,
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 22, 200, 0),
-              child: EducationWidget(
-                education: Education(
-                  certificate: "O'level",
-                  school: 'St Johns Emerald Hill High School',
-                  result: '16 As',
-                  yearGraduated: 1999,
-                ),
-              ),
-            ),
-            ProfileShort(user: freelancer.user),
+            ProfileShort(user: freelancer),
             SizedBox(height: 10),
             FreelanceBig(freelancer: freelancer),
             SizedBox(height: 10),

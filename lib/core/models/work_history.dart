@@ -12,4 +12,14 @@ class WorkHistory {
     this.finishingYear,
     this.stillWorkingThere,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      "position": position,
+      "companyName": companyName,
+      "startingYear": startingYear,
+      "finishingYear": finishingYear,
+      "stillWorkingThere": stillWorkingThere,
+    };
+  }
 }
