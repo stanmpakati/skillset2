@@ -11,7 +11,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+<<<<<<< HEAD
 	<string>newserverdemo</string>
+=======
+	<string>skillset</string>
+>>>>>>> ed9b1dc0eb75fef0b293b2c0b7321fce375c2209
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
 import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
@@ -42,6 +45,9 @@ class MyApp extends StatelessWidget {
           AuthenticationWrapper.id: (context) => AuthenticationWrapper(),
           FreelancerView.id: (context) => FreelancerView(),
           JobDetails.id: (context) => JobDetails(posting: mockPosting),
+          PersonalDetails.id: (context) => PersonalDetails(),
+          FreelancerDescription.id: (context) => FreelancerDescription(),
+          FreelancerSkills.id: (context) => FreelancerSkills(),
         },
       ),
     );
