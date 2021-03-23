@@ -49,7 +49,9 @@ class _FreelancerDescriptionState extends State<FreelancerDescription> {
                               child: Text(
                                 "Fill in your work details.",
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context)
+                                    .primaryTextTheme
+                                    .headline6,
                               ),
                             ),
                           ),

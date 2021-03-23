@@ -27,7 +27,7 @@ class _JobDetailsState extends State<JobDetails> {
         children: [
           Text(
             '${widget.posting.title}',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).primaryTextTheme.headline6,
           ),
           Divider(),
           Row(
@@ -35,17 +35,19 @@ class _JobDetailsState extends State<JobDetails> {
               Expanded(
                   child: Text(
                 'Posted ${widget.posting.postedOn.toUtc()}',
-                style: Theme.of(context).textTheme.caption,
+                style: Theme.of(context).primaryTextTheme.caption,
               )),
               Icon(Icons.location_on, color: Theme.of(context).accentColor),
               Text('${widget.posting.location}'),
             ],
           ),
           SizedBox(height: 14),
-          Text('Skills Required', style: Theme.of(context).textTheme.headline4),
+          Text('Skills Required',
+              style: Theme.of(context).primaryTextTheme.headline4),
           SizedBox(height: 8),
           Wrap(children: getSkills(context)),
-          Text('Description', style: Theme.of(context).textTheme.headline4),
+          Text('Description',
+              style: Theme.of(context).primaryTextTheme.headline4),
           Text('${widget.posting.description}'),
           SizedBox(height: 14),
           Row(
@@ -57,7 +59,7 @@ class _JobDetailsState extends State<JobDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Experience',
-                      style: Theme.of(context).textTheme.headline4),
+                      style: Theme.of(context).primaryTextTheme.headline4),
                   Text('inter'),
                 ],
               ),
@@ -65,10 +67,11 @@ class _JobDetailsState extends State<JobDetails> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Pay', style: Theme.of(context).textTheme.headline4),
+                  Text('Pay',
+                      style: Theme.of(context).primaryTextTheme.headline4),
                   Text(
                     '${widget.posting.pay.amount}',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).primaryTextTheme.headline4,
                   ),
                 ],
               ),
@@ -76,7 +79,7 @@ class _JobDetailsState extends State<JobDetails> {
           ),
           Divider(),
           SizedBox(height: 14),
-          Text('Employer', style: Theme.of(context).textTheme.headline4),
+          Text('Employer', style: Theme.of(context).primaryTextTheme.headline4),
           // ProfileShort()
           RaisedButton(
             onPressed: goToChat,

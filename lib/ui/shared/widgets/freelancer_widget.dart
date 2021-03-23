@@ -35,7 +35,7 @@ class FreelanceBig extends StatelessWidget {
             leading: cachedNetworkImage(freelancer.user.profilePicture),
             title: Text(
               '${freelancer.user.firstName} ${freelancer.user.lastName}',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).primaryTextTheme.headline4,
             ),
             subtitle: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -49,7 +49,7 @@ class FreelanceBig extends StatelessWidget {
                         color: Theme.of(context).accentColor),
                     Text(
                       '${freelancer.user.city}, ${freelancer.user.country}',
-                      style: Theme.of(context).textTheme.caption,
+                      style: Theme.of(context).primaryTextTheme.caption,
                     ),
                   ],
                 ),
@@ -65,14 +65,14 @@ class FreelanceBig extends StatelessWidget {
               Expanded(
                 child: Text(
                   '${freelancer.title}',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).primaryTextTheme.headline5,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 8),
                 child: Text(
                   '20',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).primaryTextTheme.headline6,
                 ),
               ),
               Text('/hour'),
@@ -80,10 +80,9 @@ class FreelanceBig extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Text(
-            '${freelancer.bio}',
+            '${freelancer.user.bio}',
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontFamily: 'BebasNeue'),
           ),
           Wrap(
             alignment: WrapAlignment.start,

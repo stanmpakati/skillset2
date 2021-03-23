@@ -48,7 +48,9 @@ class _FreelancerSkillsState extends State<FreelancerSkills> {
                               child: Text(
                                 "Please fill your skills in the input box below.",
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context)
+                                    .primaryTextTheme
+                                    .headline6,
                               ),
                             ),
                           ),

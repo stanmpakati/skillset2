@@ -52,7 +52,8 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                             child: Text(
                               "Build your profile.",
                               textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline6,
+                              style:
+                                  Theme.of(context).primaryTextTheme.headline6,
                             ),
                           ),
                         ),

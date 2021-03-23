@@ -27,8 +27,8 @@ ThemeData lightTheme = ThemeData(
   // main font
   fontFamily: 'Raleway',
 
-  // primaryTextTheme: Typography.material2018().white,
-  primaryTextTheme: textTheme,
+  // primaryprimaryTextTheme: Typography.material2018().white,
+  textTheme: textTheme,
 
   scaffoldBackgroundColor: Color(0xFFf2f2f2),
 

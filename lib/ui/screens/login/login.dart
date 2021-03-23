@@ -55,7 +55,9 @@ class _LoginAtSignState extends State<LoginAtSign> {
                               child: Text(
                                 "Zim's #1 Freelance App.",
                                 textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context)
+                                    .primaryTextTheme
+                                    .headline6,
                               ),
                             ),
                           ),
@@ -74,7 +76,8 @@ class _LoginAtSignState extends State<LoginAtSign> {
                           child: DropdownButton<String>(
                             hint: Text(
                               '\tPick an @sign',
-                              style: Theme.of(context).textTheme.headline6,
+                              style:
+                                  Theme.of(context).primaryTextTheme.headline6,
                             ),
                             icon: Icon(Icons.keyboard_arrow_down),
                             iconSize: 24,

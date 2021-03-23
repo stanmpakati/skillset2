@@ -15,7 +15,7 @@ class EducationWidget extends StatelessWidget {
         children: [
           Text(
             education.certificate != null ? education.certificate : '',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).primaryTextTheme.headline6,
           ),
           Text(
             education.result != null ? education.result : '',
@@ -28,7 +28,7 @@ class EducationWidget extends StatelessWidget {
             education.yearGraduated != null
                 ? education.yearGraduated.toString()
                 : '',
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).primaryTextTheme.caption,
           ),
         ],
       ),

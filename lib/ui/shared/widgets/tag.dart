@@ -8,7 +8,7 @@ Widget tag(BuildContext context, String text) {
   //   ),
   //   child: (Text(
   //     text,
-  //     style: Theme.of(context).textTheme.caption,
+  //     style: Theme.of(context).primaryTextTheme.caption,
   //   ),),
   // );
   return Padding(
@@ -17,7 +17,7 @@ Widget tag(BuildContext context, String text) {
       backgroundColor: Theme.of(context).primaryColorLight,
       label: Text(
         text,
-        style: Theme.of(context).textTheme.caption,
+        style: Theme.of(context).primaryTextTheme.caption,
       ),
     ),
   );

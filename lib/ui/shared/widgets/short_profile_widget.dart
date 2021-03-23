@@ -23,7 +23,7 @@ class ProfileShort extends StatelessWidget {
         leading: cachedNetworkImage(user.profilePicture),
         title: Text(
           '${user.firstName} ${user.lastName}',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).primaryTextTheme.headline6,
         ),
         subtitle: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -36,7 +36,7 @@ class ProfileShort extends StatelessWidget {
                 Icon(Icons.location_on, color: Theme.of(context).accentColor),
                 Text(
                   '${user.city}, ${user.country}',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).primaryTextTheme.caption,
                 ),
               ],
             ),

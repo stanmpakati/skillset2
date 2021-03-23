@@ -38,12 +38,12 @@ class JobWidget extends StatelessWidget {
                     posting.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).primaryTextTheme.headline4,
                   ),
                 ),
                 Text(
                   '\$${posting.pay.amount}',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).primaryTextTheme.headline5,
                 ),
                 Text('${posting.pay.unit}'),
               ],
@@ -61,7 +61,7 @@ class JobWidget extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text('Posted ${posting.postedOn}',
-                      style: Theme.of(context).textTheme.caption),
+                      style: Theme.of(context).primaryTextTheme.caption),
                 ),
                 Icon(
                   Icons.location_on,
