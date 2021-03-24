@@ -10,19 +10,26 @@ class UserService extends ChangeNotifier {
   Freelancer _freelancer;
   ServerDemoService _atClientService = ServerDemoService.getInstance();
   Map<String, dynamic> profileData = {
-    'userId': null,
-    'atSign': null,
-    'profilePicture': null,
-    'firstName': null,
-    'lastName': null,
-    'email': null,
-    'city': null,
-    'country': null,
-    'bio': null,
+    "userId": String,
+    "atSign": String,
+    "profilePicture": String,
+    "firstName": String,
+    "lastName": String,
+    "email": String,
+    "city": String,
+    "country": String,
+    "bio": String,
+    "stars": int,
+    "title": String,
+    "skills": [],
+    "education": [],
+    "workHistory": [],
+    "priceList": [],
   };
-  List<String> skills = [];
 
   Freelancer get freelancer => _freelancer;
+
+  set builduser(dynamic addition) {}
 
   void getUser(BuildContext context, String atSign) async {
     AtKey lookup = AtKey();
@@ -37,5 +44,10 @@ class UserService extends ChangeNotifier {
     // Navigator.pushReplacementNamed(context, FreelancerView.id);
   }
 
-  void makeUser() {}
+  void makeUser(atSign) async {
+    AtKey pair = AtKey();
+    pair.key = 'user';
+    pair.sharedWith = atSign;
+    await _atClientService.put(pair, profileData.toString());
+  }
 }

@@ -5,6 +5,7 @@ import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
+import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
 import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
           FreelancerDescription.id: (context) => FreelancerDescription(),
           FreelancerSkills.id: (context) => FreelancerSkills(),
           Profile.id: (context) => Profile(freelancer: mockFreelancer),
+          OnBoard.id: (context) => OnBoard(),
         },
       ),
     );
@@ -76,7 +78,8 @@ class AuthenticationWrapper extends StatelessWidget {
 
         print('not null ${user.toMap()}');
         print(_atSign);
-        return WelcomeScreen();
+        // return OnBoard();
+        return FreelancerView();
       },
     );
   }

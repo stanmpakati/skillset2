@@ -57,6 +57,37 @@ class Freelancer {
       'priceList': priceList.map((price) => price.toMap()).toList(),
     };
   }
+
+  factory Freelancer.fromJson(Map<String, dynamic> json) {
+    var _edu = json['education'] as List;
+    List<Education> _eduList = _edu.map((edu) => Education.fromJson(edu));
+
+    // work hisory
+    var _wh = json['education'] as List;
+    List<WorkHistory> _whList = _wh.map((wh) => WorkHistory.fromJson(wh));
+
+    // price
+    var _price = json['education'] as List;
+    List<Price> _priceList = _price.map((price) => Price.fromJson(price));
+
+    return Freelancer(
+      userId: json['userId'],
+      atSign: json['atSign'],
+      firstName: json['firstName'],
+      lastName: json['lastName'],
+      city: json['city'],
+      country: json['country'],
+      profilePicture: json['profilePicture'],
+      email: json['email'],
+      bio: json['bio'],
+      stars: json['stars'],
+      title: json['title'],
+      skills: json['skills'],
+      priceList: _priceList,
+      education: _eduList,
+      workHistory: _whList,
+    );
+  }
 }
 
 Freelancer mockFreelancer = Freelancer(

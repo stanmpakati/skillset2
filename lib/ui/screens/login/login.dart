@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
-import 'package:newserverdemo/core/services/server_demo_service.dart';
-import 'package:newserverdemo/ui/screens/welcome.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
 
@@ -16,7 +14,6 @@ class LoginAtSign extends StatefulWidget {
 class _LoginAtSignState extends State<LoginAtSign> {
   bool showSpinner = false;
   String _atSign;
-  ServerDemoService _serverDemoService = ServerDemoService.getInstance();
 
   @override
   Widget build(BuildContext context) {

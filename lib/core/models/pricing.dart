@@ -15,4 +15,8 @@ class Price {
       'description': description,
     };
   }
+
+  factory Price.fromJson(Map<String, dynamic> json) {
+    return Price(amount: json['amount'], unit: json['unit']);
+  }
 }

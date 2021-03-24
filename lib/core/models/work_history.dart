@@ -22,4 +22,14 @@ class WorkHistory {
       "stillWorkingThere": stillWorkingThere,
     };
   }
+
+  factory WorkHistory.fromJson(Map<String, dynamic> json) {
+    return WorkHistory(
+      companyName: json['companyName'],
+      position: json['position'],
+      startingYear: json['startingYear'],
+      finishingYear: json['finishingYear'],
+      stillWorkingThere: json['stillWorkingThere'],
+    );
+  }
 }
