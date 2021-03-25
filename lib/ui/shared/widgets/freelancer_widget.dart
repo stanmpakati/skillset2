@@ -32,9 +32,9 @@ class FreelanceBig extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            leading: cachedNetworkImage(freelancer.user.profilePicture),
+            leading: cachedNetworkImage(freelancer.profilePicture),
             title: Text(
-              '${freelancer.user.firstName} ${freelancer.user.lastName}',
+              '${freelancer.firstName} ${freelancer.lastName}',
               style: Theme.of(context).primaryTextTheme.headline4,
             ),
             subtitle: Column(
@@ -48,12 +48,12 @@ class FreelanceBig extends StatelessWidget {
                     Icon(Icons.location_on,
                         color: Theme.of(context).accentColor),
                     Text(
-                      '${freelancer.user.city}, ${freelancer.user.country}',
+                      '${freelancer.city}, ${freelancer.country}',
                       style: Theme.of(context).primaryTextTheme.caption,
                     ),
                   ],
                 ),
-                starsRating(rating: freelancer.user.stars),
+                starsRating(rating: freelancer.stars),
               ],
             ),
             onTap: () => print('Navigate to profile page'),
@@ -80,7 +80,7 @@ class FreelanceBig extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Text(
-            '${freelancer.user.bio}',
+            '${freelancer.bio}',
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),

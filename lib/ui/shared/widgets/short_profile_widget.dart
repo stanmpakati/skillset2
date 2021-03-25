@@ -5,7 +5,7 @@ import 'cached_image.dart';
 import 'stars.dart';
 
 class ProfileShort extends StatelessWidget {
-  final User user;
+  final Freelancer user;
 
   const ProfileShort({Key key, this.user}) : super(key: key);
   @override

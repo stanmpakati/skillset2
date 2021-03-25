@@ -1,31 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:newserverdemo/core/services/server_demo_service.dart';
 import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
+<<<<<<< HEAD
+=======
+
+import 'user_service.dart';
+import 'server_demo_service.dart';
+>>>>>>> f6757f6c3ec34f443a68113fa268f38b377b3b8c
 
 class AuthService extends ChangeNotifier {
   String _atsign;
-  ServerDemoService _serverDemoService = ServerDemoService.getInstance();
+  ServerDemoService _atClientService = ServerDemoService.getInstance();
+  UserService _userService;
 
   String get atsign => _atsign;
 
   void login(BuildContext context, String atSign) {
-    String jsonData = _serverDemoService.encryptKeyPairs(atSign);
+    String jsonData = _atClientService.encryptKeyPairs(atSign);
     if (atSign != null) {
-      _serverDemoService.onboard(atsign: atSign).then((result) {
+      _atClientService.onboard(atsign: atSign).then((result) {
         print(_atsign);
         if (result) {
           _atsign = atSign;
           print(_atsign);
           notifyListeners();
-          // Navigator.pushReplacementNamed(context, WelcomeScreen.id);
+          _userService.getUser(context, _atsign);
         }
       }).catchError((error) async {
-        await _serverDemoService.authenticate(atSign,
+        await _atClientService.authenticate(atSign,
             jsonData: jsonData, decryptKey: at_demo_data.aesKeyMap[atSign]);
         _atsign = atSign;
         print(_atsign);
         notifyListeners();
-        // Navigator.pushReplacementNamed(context, WelcomeScreen.id);
+        _userService.getUser(context, _atsign);
       });
     }
   }

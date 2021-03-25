@@ -13,7 +13,7 @@ class Posting {
   final Price pay;
 
   Posting({
-    @required this.postId,
+    this.postId,
     @required this.postedBy,
     @required this.postedOn,
     @required this.title,
@@ -22,6 +22,32 @@ class Posting {
     @required this.location,
     @required this.pay,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'postId': postId,
+      'postedBy': postedBy,
+      'postedOn': postedOn.toString(),
+      'title': title,
+      'description': description,
+      'skills': skills,
+      'location': location,
+      'pay': pay.toMap(),
+    };
+  }
+
+  factory Posting.fromJson(Map<String, dynamic> json) {
+    return Posting(
+      description: json['description'],
+      location: json['location'],
+      pay: json['pay'],
+      postId: json['postId'],
+      postedBy: json['postedBy'],
+      postedOn: json['postedOn'],
+      skills: json['skills'],
+      title: json['title'],
+    );
+  }
 }
 
 Posting mockPosting = Posting(
@@ -33,7 +59,7 @@ Posting mockPosting = Posting(
   have an added advantage (not lover in eating chicken duh) ''',
   skills: ['Carpentry', 'Art', 'Woodwork'],
   location: 'Muzarabani, Zimbabwe',
-  pay: Price(amount: 3500, unit: PriceUnit.job),
+  pay: Price(amount: 3500, unit: 'Job'),
   postedBy: 'boris',
   postedOn: DateTime.now(),
 );

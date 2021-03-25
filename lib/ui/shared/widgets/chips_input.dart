@@ -5,7 +5,7 @@ class ChipsInputField extends StatefulWidget {
   final String labelText;
   final Function getChips; // A function that sends data back to parent
 
-  const ChipsInputField({this.labelText, this.getChips});
+  const ChipsInputField({@required this.labelText, @required this.getChips});
 
   // List<String> get chips =
   @override
@@ -23,7 +23,6 @@ class _ChipsInputFieldState extends State<ChipsInputField> {
     for (int i = 0; i < chips.length; i++) {
       InputChip actionChip = InputChip(
         label: Text(chips[i]),
-        backgroundColor: Theme.of(context).primaryColorLight,
         onDeleted: () {
           chips.removeAt(i);
 
@@ -63,7 +62,7 @@ class _ChipsInputFieldState extends State<ChipsInputField> {
     return Column(
       children: [
         Container(
-          height: 30,
+          height: chips.length != 0 ? 30 : 0,
           child: chips.length != 0 ? buildChips() : SizedBox.shrink(),
         ),
         Row(

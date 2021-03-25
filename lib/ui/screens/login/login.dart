@@ -15,7 +15,6 @@ class LoginAtSign extends StatefulWidget {
 class _LoginAtSignState extends State<LoginAtSign> {
   bool showSpinner = false;
   String _atSign;
-  ServerDemoService _serverDemoService = ServerDemoService.getInstance();
 
   @override
   Widget build(BuildContext context) {
