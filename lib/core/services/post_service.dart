@@ -12,31 +12,51 @@ class PostService extends ChangeNotifier {
 
   List<Posting> get myPosts => _myPosts;
 
+  Future<String> _getAtSign() async {
+    return await _atClientService.getAtSign();
+  }
+
   Future<void> sendPost(String atSign, Posting jobPosting) async {
-    // Map<String, dynamic> valueObj = jobPosting.toMap();
-    // String valueJson = valueObj.toString();
     String valueJson = jsonEncode(jobPosting.toMap());
 
     AtKey pair = AtKey();
     pair.key = jobPosting.title;
-    pair.sharedWith = 'bob🛠';
+    pair.sharedWith = atSign;
     await _atClientService.put(pair, valueJson);
   }
 
-  Future<void> getMyPosts(String atSign) async {
+  Future<void> getMyPosts() async {
+    String atSign = await _getAtSign();
     List<AtKey> response = await _atClientService.getAtKeys(sharedBy: atSign);
+    List<String> scanList = [];
+
     if (response.length > 0) {
-      List<String> scanList = response.map((atKey) => atKey.key).toList();
+      scanList = response.map((atKey) => atKey.key).toList();
     }
+
+    List<String> values = [];
+    List<Map<String, dynamic>> json = [];
+    for (String key in scanList) {
+      String value = await _lookup(key, '@bob🛠');
+      values.add(value);
+      json.add(jsonDecode(value));
+    }
+
+    List<Posting> postings = [];
+    postings = json.map((map) => Posting.fromJson(map)).toList();
+    print(postings);
+    _myPosts = postings;
+    notifyListeners();
   }
 
-  _lookup(String lookupKey, String atSign) async {
-    if (lookupKey != null) {
+  Future<String> _lookup(String key, String atSign) async {
+    if (key != null) {
       AtKey lookup = AtKey();
-      lookup.key = lookupKey;
+      lookup.key = key;
       lookup.sharedWith = atSign;
       String response = await _atClientService.get(lookup);
-      if (response != null) {}
+      return response;
     }
+    return '';
   }
 }

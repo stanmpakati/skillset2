@@ -38,14 +38,19 @@ class Posting {
   }
 
   factory Posting.fromJson(Map<String, dynamic> json) {
+    var _pay = json['pay'];
+    Price _eduList = Price.fromJson(_pay);
+
+    List<String> _skills = [...json['skills']];
+
     return Posting(
       description: json['description'],
       location: json['location'],
-      pay: json['pay'],
+      pay: _eduList,
       postId: json['postId'],
       postedBy: json['postedBy'],
-      postedOn: json['postedOn'],
-      skills: json['skills'],
+      postedOn: DateTime.parse(json['postedOn']),
+      skills: _skills,
       title: json['title'],
     );
   }

@@ -9,11 +9,11 @@ class RoundedButton extends StatelessWidget {
   final double height;
 
   RoundedButton(
-      {@required this.color,
+      {this.color,
       @required this.path,
       @required this.text,
-      @required this.width,
-      @required this.height});
+      this.width,
+      this.height});
 
   @override
   Widget build(BuildContext context) {

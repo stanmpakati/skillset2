@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/posting.dart';
 import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
+import 'package:newserverdemo/ui/shared/utils/time_ago.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
 
 class JobWidget extends StatelessWidget {
@@ -38,7 +39,7 @@ class JobWidget extends StatelessWidget {
                     posting.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).primaryTextTheme.headline4,
+                    style: Theme.of(context).primaryTextTheme.headline6,
                   ),
                 ),
                 Text(
@@ -53,14 +54,15 @@ class JobWidget extends StatelessWidget {
             SizedBox(height: 8.0),
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.start,
-              runSpacing: 4,
+              runSpacing: -10,
               children: getSkills(context),
             ),
             SizedBox(height: 6.0),
             Row(
               children: [
                 Expanded(
-                  child: Text('Posted ${posting.postedOn}',
+                  child: Text(
+                      'Posted ${TimeAgo.timeAgoSinceDate(posting.postedOn)}',
                       style: Theme.of(context).primaryTextTheme.caption),
                 ),
                 Icon(

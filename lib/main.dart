@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<AuthService>(
           create: (_) => AuthService(),
+        ),
+        ChangeNotifierProvider<PostService>(
+          create: (_) => PostService(),
         ),
         StreamProvider<Freelancer>(
           create: (_) => user,
@@ -71,12 +75,12 @@ class AuthenticationWrapper extends StatelessWidget {
       builder: (BuildContext contex, AuthService authService, Widget child) {
         // Map map = user.toMap()
         if (authService.atsign == null) {
-          print('user: ${user.toMap()}');
+          // print('user: ${user.toMap()}');
           return LoginAtSign();
           // Navigator.pushNamed(context, FreelancerView.id);
         }
 
-        print('not null ${user.toMap()}');
+        // print('not null ${user.toMap()}');
         print(_atSign);
         // return OnBoard();
         return FreelancerView();

@@ -15,12 +15,12 @@ class FreelancerView extends StatefulWidget {
 }
 
 class _FreelancerViewState extends State<FreelancerView> {
-  int _currentIndex = 4;
+  int _currentIndex = 0;
   PageController _pageController = PageController();
 
   List<BottomNavigationBarItem> _bottomNavBarItems = [
     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-    BottomNavigationBarItem(icon: Icon(Icons.cases), label: 'Proposals'),
+    BottomNavigationBarItem(icon: Icon(Icons.file_upload), label: 'My Posts'),
     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Job'),
     BottomNavigationBarItem(icon: Icon(Icons.email), label: 'Messages'),
     BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
@@ -55,6 +55,7 @@ class _FreelancerViewState extends State<FreelancerView> {
         physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: CupertinoTabBar(
+        backgroundColor: Colors.white,
         onTap: _changePage,
         currentIndex: _currentIndex,
         items: _bottomNavBarItems,
