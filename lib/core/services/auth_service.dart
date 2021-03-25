@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
-<<<<<<< HEAD
-=======
 
 import 'user_service.dart';
 import 'server_demo_service.dart';
->>>>>>> f6757f6c3ec34f443a68113fa268f38b377b3b8c
 
 class AuthService extends ChangeNotifier {
   String _atsign;

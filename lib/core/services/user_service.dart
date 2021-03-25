@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:at_commons/at_commons.dart';
 import 'package:newserverdemo/core/models/user.dart';
@@ -29,7 +31,14 @@ class UserService extends ChangeNotifier {
 
   Freelancer get freelancer => _freelancer;
 
-  set builduser(dynamic addition) {}
+  void builduser(Map<String, dynamic> userMap) async {
+    String valueJson = jsonEncode(userMap);
+
+    AtKey pair = AtKey();
+    pair.key = 'user';
+    pair.sharedWith = userMap['atSign'];
+    await _atClientService.put(pair, valueJson);
+  }
 
   void getUser(BuildContext context, String atSign) async {
     AtKey lookup = AtKey();
