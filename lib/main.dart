@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: lightTheme,
-        initialRoute: FreelancerView.id,
+        initialRoute: WelcomeScreen.id,
         routes: {
           LoginAtSign.id: (context) => LoginAtSign(),
           WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -67,7 +67,7 @@ class AuthenticationWrapper extends StatelessWidget {
         if (authService.atsign == null) {
           print('user: ${user.atSign}');
           // return LoginAtSign();
-          Navigator.pushNamed(context, FreelancerView.id);
+          Navigator.pushNamed(context, WelcomeScreen.id);
         }
 
         print('not null ${user.atSign}');
