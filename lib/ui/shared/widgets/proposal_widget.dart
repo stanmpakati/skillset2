@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/proposal.dart';
-import 'package:newserverdemo/ui/screens/freelancer/proposals/proposal_notifications.dart';
 
 class ProposalNotification extends StatelessWidget {
   final JobProposal jobProposal;

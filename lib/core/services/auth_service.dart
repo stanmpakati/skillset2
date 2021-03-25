@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/services/server_demo_service.dart';
 import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
-import 'package:newserverdemo/ui/screens/welcome.dart';
 
 class AuthService extends ChangeNotifier {
   String _atsign;
