@@ -13,7 +13,7 @@ TextTheme textTheme = TextTheme(
   subtitle1: TextStyle(
     fontFamily: 'BebasNeue',
     fontSize: 32.0,
-    color: Colors.white,
+    color: Colors.black,
   ),
 );
 

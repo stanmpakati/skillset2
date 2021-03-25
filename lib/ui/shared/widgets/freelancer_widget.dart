@@ -35,7 +35,7 @@ class FreelanceBig extends StatelessWidget {
             leading: cachedNetworkImage(freelancer.profilePicture),
             title: Text(
               '${freelancer.firstName} ${freelancer.lastName}',
-              style: Theme.of(context).primaryTextTheme.headline4,
+              style: Theme.of(context).primaryTextTheme.headline6,
             ),
             subtitle: Column(
               mainAxisAlignment: MainAxisAlignment.start,

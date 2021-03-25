@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
+import 'package:newserverdemo/ui/shared/widgets/chips_input.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 
 class FreelancerSkills extends StatefulWidget {
@@ -9,6 +11,14 @@ class FreelancerSkills extends StatefulWidget {
 }
 
 class _FreelancerSkillsState extends State<FreelancerSkills> {
+  List<String> childChips = [];
+  void getChips(passedChips) {
+    print(passedChips);
+    setState(() {
+      childChips = passedChips;
+    });
+  }
+
   bool showSpinner = false;
   @override
   Widget build(BuildContext context) {
@@ -46,7 +56,7 @@ class _FreelancerSkillsState extends State<FreelancerSkills> {
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16),
                               child: Text(
-                                "Please fill your skills in the input box below.",
+                                "Please fill your skills in the input below.",
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .primaryTextTheme
@@ -59,17 +69,9 @@ class _FreelancerSkillsState extends State<FreelancerSkills> {
                               child: Column(children: <Widget>[
                             Container(
                               padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(),
-                                ),
-                              ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: 'Enter skill',
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.work),
-                                ),
+                              child: ChipsInputField(
+                                labelText: 'Skills',
+                                getChips: getChips,
                               ),
                             ),
                             SizedBox(),
@@ -93,5 +95,6 @@ class _FreelancerSkillsState extends State<FreelancerSkills> {
     setState(() {
       showSpinner = true;
     });
+    Navigator.pushReplacementNamed(context, FreelancerView.id);
   }
 }

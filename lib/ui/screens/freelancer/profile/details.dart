@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
-
 import 'description.dart';
 
 class PersonalDetails extends StatefulWidget {

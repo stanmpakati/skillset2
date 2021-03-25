@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/posting.dart';
-import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
-import 'package:newserverdemo/ui/shared/widgets/short_profile_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
 
 class JobDetails extends StatefulWidget {
