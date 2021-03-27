@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/services/post_service.dart';
+import 'package:newserverdemo/core/services/user_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<PostService>(
           create: (_) => PostService(),
+        ),
+        ChangeNotifierProvider<UserService>(
+          create: (_) => UserService(),
         ),
         StreamProvider<Freelancer>(
           create: (_) => user,

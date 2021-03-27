@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:newserverdemo/core/models/user.dart';
+import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
+import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/education.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/prices.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/work_history.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 
 class OnBoard extends StatefulWidget {
@@ -19,6 +23,7 @@ final descriptionFormKey = GlobalKey<FormState>();
 class _OnBoardState extends State<OnBoard> {
   final int _numPages = 6;
   final PageController _pageController = PageController(initialPage: 0);
+  bool showSpinner = false;
   Map<String, dynamic> newUser = {
     'userId': null,
     'atSign': null,
@@ -29,7 +34,7 @@ class _OnBoardState extends State<OnBoard> {
     'city': null,
     'country': null,
     'bio': null,
-    'stars': null,
+    'stars': 0,
     'title': null,
     'skills': null,
     'education': [],
@@ -66,14 +71,15 @@ class _OnBoardState extends State<OnBoard> {
           curve: Curves.easeIn,
         );
       }
-    } else if (_currentPage == 2) {
+    } else if (_currentPage == 5) {
+      // showSpinner = true;
+      UserService().uploadUser(context, newUser);
+    } else {
       _pageController.nextPage(
         duration: Duration(milliseconds: 500),
         curve: Curves.easeIn,
       );
-      UserService().builduser(newUser);
     }
-    // _currentPage != 5 ?
   }
 
   List<Widget> _buildPageIndicator() {
@@ -89,52 +95,55 @@ class _OnBoardState extends State<OnBoard> {
     return Scaffold(
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
-        child: Stack(
-          children: [
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.start,
-                children: <Widget>[
-                  Container(
-                    height: 650.0,
-                    child: PageView(
-                      physics: ClampingScrollPhysics(),
-                      controller: _pageController,
-                      onPageChanged: (int page) {
-                        setState(() {
-                          _currentPage = page;
-                        });
-                      },
-                      children: <Widget>[
-                        PersonalDetails(function: callBack),
-                        FreelancerDescription(function: callBack),
-                        FreelancerSkills(function: callBack),
-                        // getField(),
-                        // getField(),
-                        // getField(),
-                      ],
+        child: ModalProgressHUD(
+          inAsyncCall: showSpinner,
+          child: Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      height: 650.0,
+                      child: PageView(
+                        physics: ClampingScrollPhysics(),
+                        controller: _pageController,
+                        onPageChanged: (int page) {
+                          setState(() {
+                            _currentPage = page;
+                          });
+                        },
+                        children: <Widget>[
+                          PersonalDetails(function: callBack),
+                          FreelancerDescription(function: callBack),
+                          FreelancerSkills(function: callBack),
+                          PriceSheet(function: callBack),
+                          EducationDetails(function: callBack),
+                          WorkDetails(function: callBack),
+                        ],
+                      ),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: _buildPageIndicator(),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: -40,
-              right: 12,
-              child: Container(
-                width: 80,
-                child: RoundedButton(
-                  text: 'next',
-                  path: _next,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: _buildPageIndicator(),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              Positioned(
+                bottom: -40,
+                right: 12,
+                child: Container(
+                  width: 80,
+                  child: RoundedButton(
+                    text: 'next',
+                    path: _next,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

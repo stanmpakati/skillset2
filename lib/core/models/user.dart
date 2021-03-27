@@ -60,15 +60,21 @@ class Freelancer {
 
   factory Freelancer.fromJson(Map<String, dynamic> json) {
     var _edu = json['education'] as List;
-    List<Education> _eduList = _edu.map((edu) => Education.fromJson(edu));
+    List<Education> _eduList =
+        _edu.map((edu) => Education.fromJson(edu)).toList();
 
     // work hisory
     var _wh = json['education'] as List;
-    List<WorkHistory> _whList = _wh.map((wh) => WorkHistory.fromJson(wh));
+    List<WorkHistory> _whList =
+        _wh.map((wh) => WorkHistory.fromJson(wh)).toList();
 
     // price
     var _price = json['education'] as List;
-    List<Price> _priceList = _price.map((price) => Price.fromJson(price));
+    List<Price> _priceList =
+        _price.map((price) => Price.fromJson(price)).toList();
+
+    // skills
+    List<String> _skills = [...json['skills']];
 
     return Freelancer(
       userId: json['userId'],
@@ -82,7 +88,7 @@ class Freelancer {
       bio: json['bio'],
       stars: json['stars'],
       title: json['title'],
-      skills: json['skills'],
+      skills: _skills,
       priceList: _priceList,
       education: _eduList,
       workHistory: _whList,
