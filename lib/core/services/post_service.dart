@@ -32,21 +32,21 @@ class PostService extends ChangeNotifier {
 
     if (response.length > 0) {
       scanList = response.map((atKey) => atKey.key).toList();
-    }
 
-    List<String> values = [];
-    List<Map<String, dynamic>> json = [];
-    for (String key in scanList) {
-      String value = await _lookup(key, '@bob🛠');
-      values.add(value);
-      json.add(jsonDecode(value));
-    }
+      List<String> values = [];
+      List<Map<String, dynamic>> postJson = [];
+      for (String key in scanList) {
+        String value = await _lookup(key, atSign);
+        values.add(value);
+        postJson.add(jsonDecode(value));
+      }
 
-    List<Posting> postings = [];
-    postings = json.map((map) => Posting.fromJson(map)).toList();
-    print(postings);
-    _myPosts = postings;
-    notifyListeners();
+      List<Posting> postings = [];
+      postings = postJson.map((map) => Posting.fromJson(map)).toList();
+      print(postings);
+      _myPosts = postings;
+      notifyListeners();
+    }
   }
 
   Future<String> _lookup(String key, String atSign) async {

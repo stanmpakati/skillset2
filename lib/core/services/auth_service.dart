@@ -20,7 +20,7 @@ class AuthService extends ChangeNotifier {
           _atsign = atSign;
           print(_atsign);
           notifyListeners();
-          _userService.getUser(context, _atsign);
+          _userService.getUser();
         }
       }).catchError((error) async {
         await _atClientService.authenticate(atSign,
@@ -28,7 +28,7 @@ class AuthService extends ChangeNotifier {
         _atsign = atSign;
         print(_atsign);
         notifyListeners();
-        _userService.getUser(context, _atsign);
+        _userService.getUser();
       });
     }
   }

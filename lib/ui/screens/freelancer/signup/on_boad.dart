@@ -34,7 +34,7 @@ class _OnBoardState extends State<OnBoard> {
     'city': null,
     'country': null,
     'bio': null,
-    'stars': 0,
+    'stars': 0.0,
     'title': null,
     'skills': null,
     'education': [],

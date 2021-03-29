@@ -72,22 +72,26 @@ class AuthenticationWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Freelancer user = context.watch<Freelancer>();
     final String _atSign =
         Provider.of<AuthService>(context, listen: false).atsign;
     return Consumer<AuthService>(
       builder: (BuildContext contex, AuthService authService, Widget child) {
-        // Map map = user.toMap()
         if (authService.atsign == null) {
-          // print('user: ${user.toMap()}');
           return LoginAtSign();
-          // Navigator.pushNamed(context, FreelancerView.id);
         }
 
-        // print('not null ${user.toMap()}');
         print(_atSign);
-        return OnBoard();
-        // return FreelancerView();
+        return Consumer<UserService>(
+          builder:
+              (BuildContext contex, UserService userService, Widget child) {
+            print(userService.freelancer);
+            if (userService.freelancer == null) {
+              userService.getUser();
+              return OnBoard();
+            }
+            return FreelancerView();
+          },
+        );
       },
     );
   }

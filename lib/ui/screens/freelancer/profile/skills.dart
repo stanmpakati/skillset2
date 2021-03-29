@@ -22,7 +22,7 @@ class _FreelancerSkillsState extends State<FreelancerSkills> {
       childChips = passedChips;
     });
     print(passedChips);
-    user['bio'] = childChips;
+    user['skills'] = childChips;
     widget.function(user);
   }
 

@@ -86,12 +86,12 @@ class Freelancer {
       profilePicture: json['profilePicture'],
       email: json['email'],
       bio: json['bio'],
-      stars: json['stars'],
+      stars: json['stars'].toDouble(),
       title: json['title'],
-      skills: _skills,
       priceList: _priceList,
       education: _eduList,
       workHistory: _whList,
+      skills: _skills,
     );
   }
 }
