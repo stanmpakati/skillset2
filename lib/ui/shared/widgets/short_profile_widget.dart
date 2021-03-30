@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/user.dart';
+import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
 
 import 'cached_image.dart';
 import 'stars.dart';
@@ -8,6 +9,14 @@ class ProfileShort extends StatelessWidget {
   final Freelancer user;
 
   const ProfileShort({Key key, this.user}) : super(key: key);
+
+  void showProfile(context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Profile()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +52,7 @@ class ProfileShort extends StatelessWidget {
             starsRating(rating: user.stars),
           ],
         ),
-        onTap: () => print('Navigate to profile page'),
+        onTap: () => showProfile(context),
         tileColor: Colors.white,
       ),
     );

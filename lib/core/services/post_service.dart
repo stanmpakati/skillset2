@@ -28,28 +28,30 @@ class PostService extends ChangeNotifier {
   Future<void> getMyPosts() async {
     String atSign = await _getAtSign();
     List<AtKey> response = await _atClientService.getAtKeys(sharedBy: atSign);
-    List<String> scanList = [];
+    List<String> keys = [];
 
     if (response.length > 0) {
-      scanList = response.map((atKey) => atKey.key).toList();
+      keys = response
+          .where((atkey) => atkey.key != 'user')
+          .map((atKey) => atKey.key)
+          .toList();
 
-      List<String> values = [];
       List<Map<String, dynamic>> postJson = [];
-      for (String key in scanList) {
-        String value = await _lookup(key, atSign);
+      for (String key in keys) {
+        List<String> values = [];
+        String value = await lookup(key, atSign);
         values.add(value);
         postJson.add(jsonDecode(value));
       }
 
       List<Posting> postings = [];
       postings = postJson.map((map) => Posting.fromJson(map)).toList();
-      print(postings);
       _myPosts = postings;
       notifyListeners();
     }
   }
 
-  Future<String> _lookup(String key, String atSign) async {
+  Future<String> lookup(String key, String atSign) async {
     if (key != null) {
       AtKey lookup = AtKey();
       lookup.key = key;

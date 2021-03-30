@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/user.dart';
+import 'package:newserverdemo/core/services/user_service.dart';
 import 'package:newserverdemo/ui/shared/widgets/cached_image.dart';
 import 'package:newserverdemo/ui/shared/widgets/education_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/stars.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
   static final id = 'Profile';
-  final Freelancer freelancer;
+  // final Freelancer freelancer;
 
-  const Profile({Key key, @required this.freelancer}) : super(key: key);
+  // const Profile({Key key, @required this.freelancer}) : super(key: key);
 
   Widget headerText(BuildContext context, String title) {
     return Container(
@@ -21,12 +23,15 @@ class Profile extends StatelessWidget {
     );
   }
 
-  List<Widget> getSkills(context) {
-    return freelancer.skills.map((skill) => tag(context, skill)).toList();
-  }
+  // List<Widget> getSkills(context) {
+  //   return freelancer.skills.map((skill) => tag(context, skill)).toList();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    Freelancer freelancer =
+        Provider.of<UserService>(context, listen: false).freelancer;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
@@ -65,7 +70,8 @@ class Profile extends StatelessWidget {
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.start,
             runSpacing: 4,
-            children: getSkills(context),
+            children:
+                freelancer.skills.map((skill) => tag(context, skill)).toList(),
           ),
           headerText(context, 'Education'),
           GridView.builder(

@@ -43,4 +43,8 @@ class UserService extends ChangeNotifier {
     }
     print('No User data');
   }
+
+  // Freelancer returnUser(String atSign){
+  //   // TODO: fetch single user
+  // }
 }

@@ -15,7 +15,10 @@ class JobWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, JobDetails.id),
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => JobDetails(atKey: posting.title))),
       child: Container(
         padding: EdgeInsets.all(12.0),
         decoration: BoxDecoration(
@@ -31,6 +34,7 @@ class JobWidget extends StatelessWidget {
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [

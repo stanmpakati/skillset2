@@ -4,7 +4,8 @@ TextTheme textTheme = TextTheme(
   headline1: TextStyle(fontFamily: 'BebasNeue', fontSize: 48.0),
   headline2: TextStyle(fontFamily: 'BebasNeue', fontSize: 32.0),
   headline3: TextStyle(fontFamily: 'BebasNeue', fontSize: 24.0),
-  headline4: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w900),
+  headline4: TextStyle(
+      fontSize: 24.0, fontWeight: FontWeight.w900, color: Colors.black),
   headline5: TextStyle(
       fontSize: 18.0, fontWeight: FontWeight.w700, color: Colors.blue),
   headline6: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700),

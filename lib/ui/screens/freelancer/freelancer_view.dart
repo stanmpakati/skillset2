@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/user.dart';
+import 'package:newserverdemo/core/services/user_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/add/add_job.dart';
 import 'package:newserverdemo/ui/screens/freelancer/home/freelancer_home.dart';
 import 'package:newserverdemo/ui/screens/freelancer/messages/messages_notifications.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
 import 'package:newserverdemo/ui/screens/freelancer/proposals/proposal_notifications.dart';
+import 'package:provider/provider.dart';
 
 class FreelancerView extends StatefulWidget {
   static final String id = "FreelancerView";
@@ -31,7 +33,7 @@ class _FreelancerViewState extends State<FreelancerView> {
     ProposalNotifications(),
     AddJob(),
     MessageNotifications(),
-    Profile(freelancer: mockFreelancer),
+    Profile(),
   ];
 
   void _changePage(int index) {

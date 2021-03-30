@@ -21,8 +21,8 @@ class ProposalNotifications extends StatelessWidget {
       // ),
       body: Consumer<PostService>(
         builder: (context, postService, child) {
-          List<Posting> posts = postService.myPosts;
           postService.getMyPosts();
+          List<Posting> posts = postService.myPosts;
           if (posts.length == 0) {
             return Center(
               child: Text(
