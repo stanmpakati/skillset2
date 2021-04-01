@@ -24,8 +24,8 @@ class _JobDetailsState extends State<JobDetails> {
     Posting posting = Provider.of<PostService>(context, listen: false)
         .myPosts
         .firstWhere((post) => post.title == widget.atKey);
-    // Freelancer owner =
-    // Provider.of<UserService>(context).returnUser(posting.postedBy);
+    // Future owner =
+    // Provider.of<UserService>(context).lookup('user', posting.postedBy, getUser: true);
     return Scaffold(
       appBar: AppBar(title: Text('Job')),
       body: ListView(

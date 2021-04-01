@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newserverdemo/ui/screens/freelancer/home/home_freelancers.dart';
 import 'package:newserverdemo/ui/screens/freelancer/home/jobs_for_me.dart';
 import 'package:newserverdemo/ui/screens/freelancer/home/widgets/tab_bar.dart';
 
@@ -15,17 +16,14 @@ class _FreelancerHomeState extends State<FreelancerHome> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Jobs Marketplace'),
+          title: Text('Home'),
         ),
         body: Column(
           children: [
             tabBar(context),
             Expanded(
               child: TabBarView(
-                children: [
-                  JobsForMe(),
-                  Icon(Icons.handyman),
-                ],
+                children: [JobsForMe(), HomeFreelancerView()],
               ),
             ),
           ],

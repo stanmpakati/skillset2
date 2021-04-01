@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 TextTheme textTheme = TextTheme(
   headline1: TextStyle(fontFamily: 'BebasNeue', fontSize: 48.0),
   headline2: TextStyle(fontFamily: 'BebasNeue', fontSize: 32.0),
-  headline3: TextStyle(fontFamily: 'BebasNeue', fontSize: 24.0),
+  headline3:
+      TextStyle(fontFamily: 'BebasNeue', fontSize: 28.0, color: Colors.black87),
   headline4: TextStyle(
-      fontSize: 24.0, fontWeight: FontWeight.w900, color: Colors.black),
+      fontSize: 24.0, fontWeight: FontWeight.w900, color: Colors.black87),
   headline5: TextStyle(
       fontSize: 18.0, fontWeight: FontWeight.w700, color: Colors.blue),
   headline6: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700),

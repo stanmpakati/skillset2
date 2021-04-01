@@ -11,6 +11,12 @@ class FreelanceBig extends StatelessWidget {
   const FreelanceBig({Key key, this.freelancer}) : super(key: key);
 
   List<Widget> getSkills(context) {
+    if (freelancer.skills.length > 3) {
+      return freelancer.skills
+          .map((skill) => tag(context, skill))
+          .toList()
+          .sublist(0, 4);
+    }
     return freelancer.skills.map((skill) => tag(context, skill)).toList();
   }
 
@@ -68,14 +74,6 @@ class FreelanceBig extends StatelessWidget {
                   style: Theme.of(context).primaryTextTheme.headline5,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  '20',
-                  style: Theme.of(context).primaryTextTheme.headline6,
-                ),
-              ),
-              Text('/hour'),
             ],
           ),
           SizedBox(height: 8),
@@ -84,8 +82,8 @@ class FreelanceBig extends StatelessWidget {
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
-          Wrap(
-            alignment: WrapAlignment.start,
+          Row(
+            // direction: Axis.,
             children: getSkills(context),
           ),
         ],

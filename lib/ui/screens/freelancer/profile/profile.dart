@@ -5,6 +5,7 @@ import 'package:newserverdemo/ui/shared/widgets/cached_image.dart';
 import 'package:newserverdemo/ui/shared/widgets/education_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/stars.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
+import 'package:newserverdemo/ui/shared/widgets/work_history_widget.dart';
 import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
@@ -15,7 +16,7 @@ class Profile extends StatelessWidget {
 
   Widget headerText(BuildContext context, String title) {
     return Container(
-      margin: EdgeInsets.fromLTRB(0, 16, 0, 12),
+      margin: EdgeInsets.fromLTRB(0, 16, 0, 10),
       child: Text(
         title,
         style: Theme.of(context).primaryTextTheme.headline3,
@@ -69,21 +70,41 @@ class Profile extends StatelessWidget {
           headerText(context, 'Skills'),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.start,
-            runSpacing: 4,
+            runSpacing: -12,
             children:
                 freelancer.skills.map((skill) => tag(context, skill)).toList(),
           ),
           headerText(context, 'Education'),
           GridView.builder(
-              itemCount: freelancer.education.length,
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, crossAxisSpacing: 6.0),
-              itemBuilder: (BuildContext context, int index) {
-                return EducationWidget(education: freelancer.education[index]);
-              }),
+            itemCount: freelancer.education.length,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 6.0,
+              childAspectRatio: 1.75 / 1,
+              mainAxisSpacing: 5.0,
+            ),
+            itemBuilder: (BuildContext context, int index) {
+              return EducationWidget(education: freelancer.education[index]);
+            },
+          ),
           headerText(context, 'Work History'),
+          GridView.builder(
+            itemCount: freelancer.education.length,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 6.0,
+              childAspectRatio: 2 / 1,
+              mainAxisSpacing: 5.0,
+            ),
+            itemBuilder: (BuildContext context, int index) {
+              return WorkHistoryWidget(
+                  workHistory: freelancer.workHistory[index]);
+            },
+          ),
         ],
       ),
     );

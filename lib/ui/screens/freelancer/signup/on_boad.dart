@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
-import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/education.dart';
@@ -25,21 +24,50 @@ class _OnBoardState extends State<OnBoard> {
   final PageController _pageController = PageController(initialPage: 0);
   bool showSpinner = false;
   Map<String, dynamic> newUser = {
-    'userId': null,
-    'atSign': null,
-    'profilePicture': null,
-    'firstName': null,
-    'lastName': null,
-    'email': null,
-    'city': null,
-    'country': null,
-    'bio': null,
-    'stars': 0.0,
-    'title': null,
-    'skills': null,
-    'education': [],
-    'workHistory': [],
-    'priceList': [],
+    // 'userId': '32',
+    // 'atSign': 'periwinkle',
+    'firstName': 'Barbara',
+    'lastName': 'Godon',
+    'email': 'barbs@godon.mail',
+    'city': 'Chegutu',
+    'country': 'Zimbabwe',
+    'stars': 2.2,
+    'title': 'Personal Detective',
+    'bio':
+        "Hey, you can hire me for all detective work. I can chase down criminals and get back your stolen items, search for lost people and solve all your mysteries",
+    'education': [
+      {
+        'certificate': "O'level",
+        'school': 'Nhowe High School',
+        'result': '10 As 1C',
+        'yearGraduated': 2014,
+      },
+      {
+        'certificate': "A'level",
+        'school': 'Peter House High School',
+        'result': '15points',
+        'yearGraduated': 2016,
+      },
+    ],
+    'workHistory': [
+      {
+        'companyName': 'Mabelreign Police',
+        'finishingYear': 2020,
+        'startingYear': 2017,
+        'position': 'Detective',
+      },
+    ],
+    'priceList': [
+      {'amount': 500, 'description': 'Simple case', 'unit': 'case'},
+    ],
+    'skills': [
+      'detective',
+      'mystery solving',
+      'policing',
+      'security',
+      'recovery',
+      'search and rescue'
+    ],
   };
 
   int _currentPage = 0;
@@ -73,6 +101,8 @@ class _OnBoardState extends State<OnBoard> {
       }
     } else if (_currentPage == 5) {
       // showSpinner = true;
+      print(newUser);
+
       UserService().uploadUser(context, newUser);
     } else {
       _pageController.nextPage(

@@ -11,19 +11,12 @@ class ProposalNotifications extends StatelessWidget {
       appBar: AppBar(
         title: Text('My Posts'),
       ),
-      // body: Center(
-      //   child: ElevatedButton(
-      //     child: Text('Get something'),
-      //     onPressed: () {
-      //       PostService().getMyPosts();
-      //     },
-      //   ),
-      // ),
       body: Consumer<PostService>(
         builder: (context, postService, child) {
           postService.getMyPosts();
           List<Posting> posts = postService.myPosts;
-          if (posts.length == 0) {
+          print('posts: $posts');
+          if (posts.isEmpty) {
             return Center(
               child: Text(
                 'No Jobs',

@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:provider/provider.dart';
 import 'package:newserverdemo/core/models/posting.dart';
-import 'package:newserverdemo/ui/shared/widgets/freelancer_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/job_widget.dart';
-import 'package:newserverdemo/ui/shared/widgets/short_profile_widget.dart';
-import 'package:newserverdemo/core/models/education.dart';
-import 'package:newserverdemo/core/models/user.dart';
-import 'package:newserverdemo/core/services/auth_service.dart';
-import 'package:newserverdemo/ui/shared/widgets/chips_input.dart';
-import 'package:newserverdemo/ui/shared/widgets/education_widget.dart';
 
 class JobsForMe extends StatefulWidget {
   @override
@@ -16,37 +10,30 @@ class JobsForMe extends StatefulWidget {
 }
 
 class _JobsForMeState extends State<JobsForMe> {
-  List<String> childChips = [];
-
-  void getChips(passedChips) {
-    print(passedChips);
-    setState(() {
-      childChips = passedChips;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    Freelancer freelancer = Provider.of<Freelancer>(context, listen: false);
-    String atSign = Provider.of<AuthService>(context, listen: false).atsign;
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 14.0),
-        child: ListView(
-          children: [
-            ChipsInputField(
-              labelText: 'Something',
-              getChips: getChips,
+    return Consumer<PostService>(
+      builder: (context, postService, child) {
+        postService.getMyPosts();
+        List<Posting> posts = postService.myPosts;
+        print('posts: $posts');
+        if (posts.isEmpty) {
+          return Center(
+            child: Text(
+              'No Jobs',
+              style: Theme.of(context).primaryTextTheme.headline2,
             ),
-            ProfileShort(user: freelancer),
-            SizedBox(height: 10),
-            FreelanceBig(freelancer: freelancer),
-            SizedBox(height: 10),
-            JobWidget(posting: mockPosting),
-            Text('$atSign'),
-          ],
-        ),
-      ),
+          );
+        }
+        return ListView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          itemCount: posts.length,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.only(bottom: 12.0),
+            child: JobWidget(posting: posts[index]),
+          ),
+        );
+      },
     );
   }
 }

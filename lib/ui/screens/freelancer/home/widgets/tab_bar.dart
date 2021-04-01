@@ -9,8 +9,8 @@ Widget tabBar(BuildContext context) {
       labelStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
       unselectedLabelStyle: TextStyle(fontSize: 16.0),
       tabs: [
-        Tab(text: 'Jobs for me'),
-        Tab(text: 'Jobs on market'),
+        Tab(text: 'Jobs'),
+        Tab(text: 'Freelancers'),
       ],
     ),
   );

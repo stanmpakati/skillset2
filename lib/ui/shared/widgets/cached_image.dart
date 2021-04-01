@@ -17,6 +17,6 @@ Widget cachedNetworkImage(String mediaUrl, {bool isPotifolio = false}) {
     );
   }
   return isPotifolio
-      ? Icon(Icons.person, size: 65)
-      : Icon(Icons.person, size: 50);
+      ? Icon(Icons.person, size: 65, color: Colors.grey[600])
+      : Icon(Icons.person, size: 50, color: Colors.grey[600]);
 }
