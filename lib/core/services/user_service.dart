@@ -42,7 +42,6 @@ class UserService extends ChangeNotifier {
       Map<String, dynamic> json = jsonDecode(response);
       _freelancer = Freelancer.fromJson(json);
 
-      print(_freelancer.firstName);
       notifyListeners();
     }
   }

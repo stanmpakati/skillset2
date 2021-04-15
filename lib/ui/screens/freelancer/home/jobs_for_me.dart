@@ -16,7 +16,7 @@ class _JobsForMeState extends State<JobsForMe> {
       builder: (context, postService, child) {
         postService.getMyPosts();
         List<Posting> posts = postService.myPosts;
-        print('posts: $posts');
+
         if (posts.isEmpty) {
           return Center(
             child: Text(

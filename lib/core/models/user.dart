@@ -98,16 +98,14 @@ class Freelancer {
 
 Freelancer mockFreelancer = Freelancer(
   userId: '32',
-  atSign: 'periwinkle',
-  firstName: 'Boris',
-  lastName: 'Zvangazvakanaka',
-  city: 'Harare',
+  atSign: '@alice🛠',
+  firstName: 'Alice',
+  lastName: 'Wonder',
+  city: 'Bulawayo',
   country: 'Zimbabwe',
   stars: 3.8,
-  bio: """Hey, I'm a very handsome youth from Zimbabwe, unlike that Munya or 
-  Glen, I feel sorry for their ugliness and more so for me who has to look at 
-  them, anyway As you can see I'm a very accomplished   software developer, I 
-  should charge more but Stan(that handsome idiot) wouldn't allow me""",
+  bio:
+      "I am an experienced software engineer from Bulawayo, I was taught when I was still in primary by my Dad and now have been in the industry for over 15 years. I can recreate anythning you want me to make or come up with my own unique designs. The wait time largley depends on the project",
   title: 'App and Web Developer',
   education: [
     Education(

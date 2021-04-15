@@ -86,7 +86,6 @@ class _LoginAtSignState extends State<LoginAtSign> {
                               color: Colors.black87,
                             ),
                             onChanged: (String newValue) {
-                              print(newValue);
                               setState(() {
                                 _atSign = newValue;
                               });

@@ -21,7 +21,7 @@ class _FreelancerSkillsState extends State<FreelancerSkills> {
     setState(() {
       childChips = passedChips;
     });
-    print(passedChips);
+
     user['skills'] = childChips;
     widget.function(user);
   }

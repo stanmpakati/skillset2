@@ -74,12 +74,11 @@ class _OnBoardState extends State<OnBoard> {
 
   void callBack(Map<String, dynamic> map) {
     newUser.addAll(map);
-    print(newUser);
   }
 
   // void skillsCallBack(List<String> passedChips) {
   //   newUser['skills'] = passedChips;
-  //   print(passedChips);
+  //
   // }
 
   void _next() {
@@ -101,7 +100,6 @@ class _OnBoardState extends State<OnBoard> {
       }
     } else if (_currentPage == 5) {
       // showSpinner = true;
-      print(newUser);
 
       UserService().uploadUser(context, newUser);
     } else {

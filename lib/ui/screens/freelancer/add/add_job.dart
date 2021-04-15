@@ -40,7 +40,6 @@ class _AddJobState extends State<AddJob> {
   final snackBar = SnackBar(content: Text('Posted!'));
 
   void getChips(passedChips) {
-    print(passedChips);
     setState(() {
       tags = passedChips;
     });
@@ -52,8 +51,7 @@ class _AddJobState extends State<AddJob> {
         // set loading state
         showSpinner = true;
       });
-      print(tags);
-      print(_jobDescriptionContoller.text);
+
       // set Price
       _price = Price(
         amount: int.parse(_priceContoller.text),
@@ -76,7 +74,7 @@ class _AddJobState extends State<AddJob> {
       _locationContoller.clear();
       _priceContoller.clear();
       _unitContoller.clear();
-      print('done');
+
       setState(() {
         showSpinner = false;
       });
@@ -143,7 +141,10 @@ class _AddJobState extends State<AddJob> {
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly,
                 ],
-                decoration: InputDecoration(labelText: 'Amount'),
+                decoration: InputDecoration(
+                  labelText: 'Amount',
+                  hintText: 'Prices can be negotiated later',
+                ),
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Required!';
@@ -154,7 +155,10 @@ class _AddJobState extends State<AddJob> {
               SizedBox(height: 14),
               TextFormField(
                 controller: _unitContoller,
-                decoration: InputDecoration(labelText: 'Pay Unit'),
+                decoration: InputDecoration(
+                  labelText: 'Pay Unit',
+                  hintText: 'Choose units relavant to the job',
+                ),
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Required!';
@@ -176,10 +180,11 @@ class _AddJobState extends State<AddJob> {
                   minLines: 3,
                   keyboardType: TextInputType.multiline,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                    hintText: 'Job Description',
+                    // border: OutlineInputBorder(
+                    //   borderSide: BorderSide(),
+                    // ),
+                    labelText: 'Job Description',
+                    hintText: 'Describe the job to potential iemployees',
                   ),
                   validator: (value) {
                     if (value.isEmpty) {

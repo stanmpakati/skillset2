@@ -3,6 +3,7 @@ import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
+import 'package:newserverdemo/ui/screens/freelancer/messages/chat_screen.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
           FreelancerSkills.id: (context) => FreelancerSkills(),
           Profile.id: (context) => Profile(),
           OnBoard.id: (context) => OnBoard(),
+          Chat.id: (context) => Chat(),
         },
       ),
     );
@@ -79,11 +81,9 @@ class AuthenticationWrapper extends StatelessWidget {
           return LoginAtSign();
         }
 
-        print(_atSign);
         return Consumer<UserService>(
           builder:
               (BuildContext contex, UserService userService, Widget child) {
-            print(userService.freelancer);
             if (userService.freelancer == null) {
               userService.getUser();
               return OnBoard();

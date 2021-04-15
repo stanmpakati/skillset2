@@ -217,7 +217,7 @@ class _EducationDetailsState extends State<EducationDetails> {
           style: TextStyle(fontSize: 16),
         ),
       );
-      print(educationHist[i]);
+
       priceWidgets.add(price);
     }
     return ListView(

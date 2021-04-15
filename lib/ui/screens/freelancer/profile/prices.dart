@@ -187,7 +187,7 @@ class _PriceSheetState extends State<PriceSheet> {
           style: TextStyle(fontSize: 16),
         ),
       );
-      print(priceSheets[i]);
+
       priceWidgets.add(price);
     }
     return ListView(

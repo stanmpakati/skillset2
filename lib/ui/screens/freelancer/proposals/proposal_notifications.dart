@@ -15,7 +15,7 @@ class ProposalNotifications extends StatelessWidget {
         builder: (context, postService, child) {
           postService.getMyPosts();
           List<Posting> posts = postService.myPosts;
-          print('posts: $posts');
+
           if (posts.isEmpty) {
             return Center(
               child: Text(
@@ -26,11 +26,13 @@ class ProposalNotifications extends StatelessWidget {
           }
           return ListView.builder(
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            itemCount: posts.length,
-            itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.only(bottom: 12.0),
-              child: JobWidget(posting: posts[index]),
-            ),
+            itemCount: posts.length - 2,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 12.0),
+                child: JobWidget(posting: posts[index]),
+              );
+            },
           );
         },
       ),

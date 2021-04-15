@@ -25,7 +25,6 @@ class JobsService extends ChangeNotifier {
       value = key + constant.splitter + value;
       responseList.add(value);
     }
-    print(responseList);
   }
 
   Future<String> _lookup(String key, String atSign) async {

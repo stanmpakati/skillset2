@@ -15,10 +15,8 @@ class AuthService extends ChangeNotifier {
     String jsonData = _atClientService.encryptKeyPairs(atSign);
     if (atSign != null) {
       _atClientService.onboard(atsign: atSign).then((result) {
-        print(_atsign);
         if (result) {
           _atsign = atSign;
-          print(_atsign);
           notifyListeners();
           _userService.getUser();
         }
@@ -26,7 +24,6 @@ class AuthService extends ChangeNotifier {
         await _atClientService.authenticate(atSign,
             jsonData: jsonData, decryptKey: at_demo_data.aesKeyMap[atSign]);
         _atsign = atSign;
-        print(_atsign);
         notifyListeners();
         _userService.getUser();
       });

@@ -50,7 +50,6 @@ class PostService extends ChangeNotifier {
       postings = postJson.map((map) => Posting.fromJson(map)).toList();
       _myPosts = postings;
       notifyListeners();
-      print(postings[0].postedBy);
     }
   }
 

@@ -8,7 +8,6 @@ class WorkHistoryWidget extends StatelessWidget {
   const WorkHistoryWidget({Key key, this.workHistory}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    print(this.workHistory.position);
     return GridTile(
       child: Container(
         decoration: BoxDecoration(border: Border.all()),

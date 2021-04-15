@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/posting.dart';
 import 'package:newserverdemo/core/models/user.dart';
+import 'package:newserverdemo/core/services/auth_service.dart';
 import 'package:newserverdemo/core/services/post_service.dart';
-import 'package:newserverdemo/core/services/user_service.dart';
+import 'package:newserverdemo/core/services/server_demo_service.dart';
+import 'package:newserverdemo/ui/screens/freelancer/messages/chat_screen.dart';
 import 'package:newserverdemo/ui/shared/utils/time_ago.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 import 'package:newserverdemo/ui/shared/widgets/short_profile_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
 import 'package:provider/provider.dart';
+import 'package:at_chat_flutter/at_chat_flutter.dart';
 
 class JobDetails extends StatefulWidget {
   final String atKey;
@@ -21,6 +24,7 @@ class JobDetails extends StatefulWidget {
 class _JobDetailsState extends State<JobDetails> {
   @override
   Widget build(BuildContext context) {
+    String currentAtSign = Provider.of<AuthService>(context).atsign;
     Posting posting = Provider.of<PostService>(context, listen: false)
         .myPosts
         .firstWhere((post) => post.title == widget.atKey);
@@ -104,13 +108,30 @@ class _JobDetailsState extends State<JobDetails> {
           Text('Employer', style: Theme.of(context).primaryTextTheme.headline6),
           SizedBox(height: 14),
           ProfileShort(user: mockFreelancer),
-          RoundedButton(path: goToChat, text: 'Make Proposal')
+          RoundedButton(
+              path: () => goToChat(currentAtSign), text: 'Make Proposal')
         ],
       ),
     );
   }
 
-  void goToChat() {
-    print('go yo chat');
+  void goToChat(String currentAtSign) {
+    // setState(() {
+    //   activeAtSign = currentAtSign;
+    // });
+    // List<String> allAtSigns = at_demo_data.allAtsigns;
+    // allAtSigns.remove(activeAtSign);
+    // setState(() {
+    //   atSigns = allAtSigns;
+    // });
+    setChatWithAtSign('@alice🛠');
+    initializeChatService(
+        ServerDemoService.getInstance().atClientServiceInstance.atClient,
+        currentAtSign,
+        rootDomain: 'vip.ve.atsign.zone');
+    Navigator.pushNamed(context, Chat.id);
   }
+
+  // TODO: Write function that determines whom you are chatting with
+  setAtsignToChatWith() {}
 }
