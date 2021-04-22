@@ -252,12 +252,13 @@ class _PersonalDetailsState extends State<PersonalDetails> {
             child: new Wrap(
               children: <Widget>[
                 new ListTile(
-                    leading: new Icon(Icons.photo_library),
-                    title: new Text('Photo Library'),
-                    onTap: () {
-                      _getFromGallery();
-                      Navigator.of(context).pop();
-                    }),
+                  leading: new Icon(Icons.photo_library),
+                  title: new Text('Photo Library'),
+                  onTap: () {
+                    _getFromGallery();
+                    Navigator.of(context).pop();
+                  },
+                ),
                 new ListTile(
                   leading: new Icon(Icons.photo_camera),
                   title: new Text('Camera'),

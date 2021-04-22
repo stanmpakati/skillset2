@@ -24,10 +24,6 @@ class Profile extends StatelessWidget {
     );
   }
 
-  // List<Widget> getSkills(context) {
-  //   return freelancer.skills.map((skill) => tag(context, skill)).toList();
-  // }
-
   @override
   Widget build(BuildContext context) {
     Freelancer freelancer =

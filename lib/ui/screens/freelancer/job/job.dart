@@ -109,21 +109,13 @@ class _JobDetailsState extends State<JobDetails> {
           SizedBox(height: 14),
           ProfileShort(user: mockFreelancer),
           RoundedButton(
-              path: () => goToChat(currentAtSign), text: 'Make Proposal')
+              path: () => goToChat(currentAtSign), text: 'Make Proposal'),
         ],
       ),
     );
   }
 
   void goToChat(String currentAtSign) {
-    // setState(() {
-    //   activeAtSign = currentAtSign;
-    // });
-    // List<String> allAtSigns = at_demo_data.allAtsigns;
-    // allAtSigns.remove(activeAtSign);
-    // setState(() {
-    //   atSigns = allAtSigns;
-    // });
     setChatWithAtSign('@alice🛠');
     initializeChatService(
         ServerDemoService.getInstance().atClientServiceInstance.atClient,
@@ -133,5 +125,8 @@ class _JobDetailsState extends State<JobDetails> {
   }
 
   // TODO: Write function that determines whom you are chatting with
-  setAtsignToChatWith() {}
+  String setAtsignToChatWith() {
+    // TODO: return dynamic string
+    return '@alice🛠';
+  }
 }

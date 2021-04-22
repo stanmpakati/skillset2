@@ -62,7 +62,8 @@ class FreelanceBig extends StatelessWidget {
                 starsRating(rating: freelancer.stars),
               ],
             ),
-            onTap: () => print('I suined something'),
+            onTap: () =>
+                print('Wrong spelling, This should do something though'),
             tileColor: Colors.white,
           ),
           SizedBox(height: 8),
