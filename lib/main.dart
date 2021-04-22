@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
-import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
 import 'package:newserverdemo/ui/screens/freelancer/messages/chat_screen.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
@@ -14,7 +13,6 @@ import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/home/freelancer_home.dart';
 import 'package:newserverdemo/ui/shared/utils/theme.dart';
-import 'core/models/posting.dart';
 import 'ui/screens/login/login.dart';
 import 'ui/screens/welcome.dart';
 
