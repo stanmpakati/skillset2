@@ -69,8 +69,9 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       )
                     : Container(
                         decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(50)),
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(50),
+                        ),
                         width: 100,
                         height: 100,
                         child: Icon(
@@ -219,7 +220,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
     );
   }
 
-  /// Get from Camera
+  // Get from Camera
   _getFromCamera() async {
     PickedFile pickedFile = await ImagePicker().getImage(
       source: ImageSource.camera,
@@ -231,7 +232,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
     }
   }
 
-  /// Get from gallery
+  // Get from gallery
   _getFromGallery() async {
     PickedFile pickedFile = await ImagePicker().getImage(
       source: ImageSource.gallery,
@@ -249,19 +250,19 @@ class _PersonalDetailsState extends State<PersonalDetails> {
       builder: (BuildContext bc) {
         return SafeArea(
           child: Container(
-            child: new Wrap(
+            child: Wrap(
               children: <Widget>[
-                new ListTile(
-                  leading: new Icon(Icons.photo_library),
-                  title: new Text('Photo Library'),
+                ListTile(
+                  leading: Icon(Icons.photo_library),
+                  title: Text('Photo Library'),
                   onTap: () {
                     _getFromGallery();
                     Navigator.of(context).pop();
                   },
                 ),
-                new ListTile(
-                  leading: new Icon(Icons.photo_camera),
-                  title: new Text('Camera'),
+                ListTile(
+                  leading: Icon(Icons.photo_camera),
+                  title: Text('Camera'),
                   onTap: () {
                     _getFromCamera();
                     Navigator.of(context).pop();
