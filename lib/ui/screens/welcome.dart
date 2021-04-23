@@ -68,7 +68,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         path: _home,
                       ),
                     )),
-                    //SizedBox(height: 30,),
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 8),
