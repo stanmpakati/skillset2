@@ -167,7 +167,7 @@ class _PriceSheetState extends State<PriceSheet> {
           'No Education selected.\nPlease add relavant qualifications',
           textAlign: TextAlign.center,
           style: Theme.of(context).primaryTextTheme.caption,
-        )
+        ),
       ],
     );
   }

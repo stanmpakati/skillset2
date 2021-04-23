@@ -16,9 +16,11 @@ class JobWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => JobDetails(atKey: posting.title))),
+        context,
+        MaterialPageRoute(
+          builder: (context) => JobDetails(atKey: posting.title),
+        ),
+      ),
       child: Container(
         padding: EdgeInsets.all(12.0),
         decoration: BoxDecoration(

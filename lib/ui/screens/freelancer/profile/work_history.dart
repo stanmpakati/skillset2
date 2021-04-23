@@ -10,7 +10,7 @@ class WorkDetails extends StatefulWidget {
 }
 
 class _WorkDetailsState extends State<WorkDetails> {
-  final workHistoryFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> workHistoryFormKey = GlobalKey<FormState>();
   TextEditingController _companyController = TextEditingController();
   TextEditingController _positionController = TextEditingController();
   TextEditingController _dateStartedController = TextEditingController();
@@ -197,7 +197,7 @@ class _WorkDetailsState extends State<WorkDetails> {
           'No Education selected.\nPlease add relavant qualifications',
           textAlign: TextAlign.center,
           style: Theme.of(context).primaryTextTheme.caption,
-        )
+        ),
       ],
     );
   }

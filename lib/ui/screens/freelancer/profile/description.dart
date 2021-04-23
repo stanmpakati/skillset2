@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
 import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
-import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 
 class FreelancerDescription extends StatefulWidget {
   static final String id = "FreelancerDescription";
@@ -21,37 +19,38 @@ class _FreelancerDescriptionState extends State<FreelancerDescription> {
       children: <Widget>[
         Expanded(
           child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Form(
-                  key: descriptionFormKey,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: Text(
-                            'Description',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'BebasNeue',
-                              fontSize: 50,
-                            ),
-                          ),
+            padding: const EdgeInsets.all(10.0),
+            child: Form(
+              key: descriptionFormKey,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        'Description',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'BebasNeue',
+                          fontSize: 50,
                         ),
                       ),
-                      Container(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: Text(
-                            "Fill in your work details.",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).primaryTextTheme.headline6,
-                          ),
-                        ),
+                    ),
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        "Fill in your work details.",
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).primaryTextTheme.headline6,
                       ),
-                      SizedBox(height: 60),
-                      Container(
-                          child: Column(children: <Widget>[
+                    ),
+                  ),
+                  SizedBox(height: 60),
+                  Container(
+                    child: Column(
+                      children: <Widget>[
                         Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
@@ -103,9 +102,13 @@ class _FreelancerDescriptionState extends State<FreelancerDescription> {
                             },
                           ),
                         ),
-                      ])),
-                    ],
-                  ))),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ],
     );

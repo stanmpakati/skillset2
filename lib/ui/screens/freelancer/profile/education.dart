@@ -197,7 +197,7 @@ class _EducationDetailsState extends State<EducationDetails> {
           'No Education selected.\nPlease add relavant qualifications',
           textAlign: TextAlign.center,
           style: Theme.of(context).primaryTextTheme.caption,
-        )
+        ),
       ],
     );
   }

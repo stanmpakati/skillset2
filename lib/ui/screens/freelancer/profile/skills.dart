@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/shared/widgets/chips_input.dart';
-import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 
 class FreelancerSkills extends StatefulWidget {
   static final String id = "FreelancerSkills";
