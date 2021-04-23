@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: lightTheme,
+        theme: darkTheme,
         initialRoute: AuthenticationWrapper.id,
         routes: {
           LoginAtSign.id: (context) => LoginAtSign(),
