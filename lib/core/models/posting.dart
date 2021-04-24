@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:newserverdemo/core/models/enums/price_units.dart';
 import 'package:newserverdemo/core/models/pricing.dart';
 
 class Posting {

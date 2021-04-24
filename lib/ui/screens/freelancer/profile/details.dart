@@ -56,7 +56,6 @@ class _PersonalDetailsState extends State<PersonalDetails> {
               },
               child: CircleAvatar(
                 radius: 55,
-                //backgroundColor: Color(0xffFDCF09),
                 child: _image != null
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(50),
