@@ -95,7 +95,14 @@ class _LoginAtSignState extends State<LoginAtSign> {
                                 .map<DropdownMenuItem<String>>(
                               (String value) {
                                 return DropdownMenuItem<String>(
-                                    value: value, child: Text(value));
+                                  value: value,
+                                  child: Text(
+                                    value,
+                                    style: Theme.of(context)
+                                        .primaryTextTheme
+                                        .bodyText2,
+                                  ),
+                                );
                               },
                             ).toList(),
                           ),

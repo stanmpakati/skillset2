@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
+import 'package:newserverdemo/core/services/auth_service.dart';
+import 'package:newserverdemo/ui/shared/utils/light_theme.dart';
+import 'package:newserverdemo/ui/screens/welcome.dart';
+import 'package:newserverdemo/ui/screens/login/login.dart';
 import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/freelancer/messages/chat_screen.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
@@ -8,13 +15,9 @@ import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
 import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
 import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
-import 'package:provider/provider.dart';
-import 'package:newserverdemo/core/models/user.dart';
-import 'package:newserverdemo/core/services/auth_service.dart';
 import 'package:newserverdemo/ui/screens/freelancer/home/freelancer_home.dart';
-import 'package:newserverdemo/ui/shared/utils/theme.dart';
-import 'ui/screens/login/login.dart';
-import 'ui/screens/welcome.dart';
+
+import 'ui/shared/utils/dark_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: darkTheme,
-        initialRoute: AuthenticationWrapper.id,
+        initialRoute: Profile.id,
         routes: {
           LoginAtSign.id: (context) => LoginAtSign(),
           WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -71,8 +74,6 @@ class AuthenticationWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String _atSign =
-        Provider.of<AuthService>(context, listen: false).atsign;
     return Consumer<AuthService>(
       builder: (BuildContext contex, AuthService authService, Widget child) {
         if (authService.atsign == null) {

@@ -26,8 +26,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Freelancer freelancer =
-        Provider.of<UserService>(context, listen: false).freelancer;
+    Freelancer freelancer = Provider.of<Freelancer>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(

@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 
 Widget tag(BuildContext context, String text) {
-  // return Container(
-  //   decoration: BoxDecoration(
-  //     borderRadius: BorderRadius.circular(20),
-  //     color: Theme.of(context).primaryColorLight,
-  //   ),
-  //   child: (Text(
-  //     text,
-  //     style: Theme.of(context).primaryTextTheme.caption,
-  //   ),),
-  // );
   return Padding(
     padding: EdgeInsets.only(right: 4),
     child: Chip(
-      backgroundColor: Theme.of(context).primaryColorLight,
+      backgroundColor: Colors.blue[200],
       label: Text(
         text,
-        style: Theme.of(context).primaryTextTheme.caption,
+        style: TextStyle(fontSize: 12.0, color: Colors.black87),
       ),
     ),
   );
