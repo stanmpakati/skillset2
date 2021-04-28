@@ -53,11 +53,9 @@ ThemeData darkTheme = ThemeData(
 
   // main font
   fontFamily: 'Raleway',
-
-  // primaryTextTheme: Typography.material2018().white,
   primaryTextTheme: darkTextTheme,
 
-  // Stypling the app bar
+  // Styling the app bar
   appBarTheme: AppBarTheme(
     textTheme: TextTheme(
       headline6: TextStyle(

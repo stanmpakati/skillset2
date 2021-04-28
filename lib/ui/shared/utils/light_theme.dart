@@ -23,18 +23,16 @@ TextTheme textTheme = TextTheme(
 ThemeData lightTheme = ThemeData(
   // Colors
   brightness: Brightness.light,
-  primaryColor: Colors.lightBlue,
+  primarySwatch: Colors.lightBlue,
   accentColor: Colors.orange,
 
   // main font
   fontFamily: 'Raleway',
-
-  // primaryTextTheme: Typography.material2018().white,
   primaryTextTheme: textTheme,
 
   scaffoldBackgroundColor: Color(0xFFf2f2f2),
 
-  // Stypling the app bar
+  // Styling the app bar
   appBarTheme: AppBarTheme(
     textTheme: TextTheme(
       headline6: TextStyle(
