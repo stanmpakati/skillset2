@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
+import 'package:newserverdemo/ui/screens/login/on_boad.dart';
 
 class PersonalDetails extends StatefulWidget {
   static final String id = "PersonalDetails";

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newserverdemo/ui/screens/freelancer/home/home_freelancers.dart';
-import 'package:newserverdemo/ui/screens/freelancer/home/jobs_for_me.dart';
-import 'package:newserverdemo/ui/screens/freelancer/home/widgets/tab_bar.dart';
+import 'package:newserverdemo/ui/screens/home/widgets/tab_bar.dart';
+
+import 'home_freelancers.dart';
+import 'jobs_for_me.dart';
 
 class FreelancerHome extends StatefulWidget {
   static final String id = "FreelancerHome";

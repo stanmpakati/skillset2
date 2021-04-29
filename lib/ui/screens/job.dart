@@ -4,13 +4,14 @@ import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
 import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:newserverdemo/core/services/server_demo_service.dart';
-import 'package:newserverdemo/ui/screens/freelancer/messages/chat_screen.dart';
 import 'package:newserverdemo/ui/shared/utils/time_ago.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 import 'package:newserverdemo/ui/shared/widgets/short_profile_widget.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
 import 'package:provider/provider.dart';
 import 'package:at_chat_flutter/at_chat_flutter.dart';
+
+import 'messages/chat_screen.dart';
 
 class JobDetails extends StatefulWidget {
   final String atKey;

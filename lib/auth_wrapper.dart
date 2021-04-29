@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
-import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
-import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
 import 'package:newserverdemo/ui/screens/login/login.dart';
+import 'package:newserverdemo/ui/screens/login/on_boad.dart';
 import 'package:provider/provider.dart';
+
+import 'ui/screens/freelancer_view.dart';
 
 class AuthenticationWrapper extends StatelessWidget {
   static final String id = "AuthWrapper";

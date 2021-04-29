@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:newserverdemo/ui/screens/freelancer/add/add_job.dart';
-import 'package:newserverdemo/ui/screens/freelancer/home/freelancer_home.dart';
-import 'package:newserverdemo/ui/screens/freelancer/messages/messages_notifications.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
-import 'package:newserverdemo/ui/screens/freelancer/proposals/proposal_notifications.dart';
+
+import 'add_job.dart';
+import 'home/freelancer_home.dart';
+import 'messages/messages_notifications.dart';
+import 'profile/profile.dart';
+import 'proposal_notifications.dart';
 
 class FreelancerView extends StatefulWidget {
   static final String id = "FreelancerView";

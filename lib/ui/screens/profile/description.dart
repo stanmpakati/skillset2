@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
+import 'package:newserverdemo/ui/screens/login/on_boad.dart';
 
 class FreelancerDescription extends StatefulWidget {
   static final String id = "FreelancerDescription";

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/education.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/prices.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/work_history.dart';
+import 'package:newserverdemo/ui/screens/profile/description.dart';
+import 'package:newserverdemo/ui/screens/profile/details.dart';
+import 'package:newserverdemo/ui/screens/profile/education.dart';
+import 'package:newserverdemo/ui/screens/profile/prices.dart';
+import 'package:newserverdemo/ui/screens/profile/skills.dart';
+import 'package:newserverdemo/ui/screens/profile/work_history.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
 
 class OnBoard extends StatefulWidget {

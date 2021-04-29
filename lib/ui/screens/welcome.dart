@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:newserverdemo/ui/screens/profile/details.dart';
 import 'package:newserverdemo/ui/shared/widgets/rounded_button.dart';
-import 'freelancer/profile/details.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static final String id = "WelcomeScreen";

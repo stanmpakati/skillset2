@@ -1,14 +1,14 @@
 import 'package:newserverdemo/auth_wrapper.dart';
+import 'package:newserverdemo/ui/screens/freelancer_view.dart';
+import 'package:newserverdemo/ui/screens/home/freelancer_home.dart';
+import 'package:newserverdemo/ui/screens/login/on_boad.dart';
+import 'package:newserverdemo/ui/screens/messages/chat_screen.dart';
+import 'package:newserverdemo/ui/screens/profile/description.dart';
+import 'package:newserverdemo/ui/screens/profile/details.dart';
+import 'package:newserverdemo/ui/screens/profile/profile.dart';
+import 'package:newserverdemo/ui/screens/profile/skills.dart';
 import 'package:newserverdemo/ui/screens/welcome.dart';
 import 'package:newserverdemo/ui/screens/login/login.dart';
-import 'package:newserverdemo/ui/screens/freelancer/freelancer_view.dart';
-import 'package:newserverdemo/ui/screens/freelancer/messages/chat_screen.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/description.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/details.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/skills.dart';
-import 'package:newserverdemo/ui/screens/freelancer/signup/on_boad.dart';
-import 'package:newserverdemo/ui/screens/freelancer/home/freelancer_home.dart';
 
 class RouteGenerator {
   final routes = {
