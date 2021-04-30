@@ -7,13 +7,13 @@ import 'package:newserverdemo/core/models/user.dart';
 import 'package:newserverdemo/core/services/post_service.dart';
 import 'package:newserverdemo/core/services/user_service.dart';
 import 'package:newserverdemo/core/services/auth_service.dart';
-import 'package:newserverdemo/ui/screens/profile/profile.dart';
 import 'package:newserverdemo/ui/shared/utils/theme_notifier.dart';
 import 'package:newserverdemo/ui/shared/utils/routes.dart';
 import 'ui/shared/utils/light_theme.dart';
 import 'ui/shared/utils/dark_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
     SharedPreferences.getInstance().then((prefs) {
       var darkModeOn = prefs.getBool('darkMode') ?? false;
@@ -52,9 +52,9 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Skillset',
         theme: themeNotifier.getTheme(),
-        initialRoute: Profile.id,
+        initialRoute: '/splash',
         routes: RouteGenerator().routes,
       ),
     );

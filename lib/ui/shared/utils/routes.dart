@@ -1,6 +1,5 @@
-import 'dart:js';
-
 import 'package:newserverdemo/auth_wrapper.dart';
+import 'package:newserverdemo/splash.dart';
 import 'package:newserverdemo/ui/screens/freelancer_view.dart';
 import 'package:newserverdemo/ui/screens/home/freelancer_home.dart';
 import 'package:newserverdemo/ui/screens/login/on_boad.dart';
@@ -27,5 +26,6 @@ class RouteGenerator {
     OnBoard.id: (context) => OnBoard(),
     Chat.id: (context) => Chat(),
     '/settings': (context) => SettingsPage(),
+    '/splash': (context) => Splash(),
   };
 }
