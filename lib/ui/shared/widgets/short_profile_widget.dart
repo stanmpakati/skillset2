@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/user.dart';
-import 'package:newserverdemo/ui/screens/freelancer/profile/profile.dart';
+import 'package:newserverdemo/ui/screens/profile/profile.dart';
 
 import 'cached_image.dart';
 import 'stars.dart';

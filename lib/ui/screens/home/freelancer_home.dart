@@ -18,6 +18,12 @@ class _FreelancerHomeState extends State<FreelancerHome> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Home'),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () => Navigator.pushNamed(context, '/settings'),
+            )
+          ],
         ),
         body: Column(
           children: [

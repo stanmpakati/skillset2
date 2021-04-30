@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newserverdemo/core/models/posting.dart';
-import 'package:newserverdemo/ui/screens/freelancer/job/job.dart';
+import 'package:newserverdemo/ui/screens/job.dart';
 import 'package:newserverdemo/ui/shared/utils/time_ago.dart';
 import 'package:newserverdemo/ui/shared/widgets/tag.dart';
 
